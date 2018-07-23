@@ -1,4 +1,5 @@
-import { createStackNavigator, createTabNavigator} from 'react-navigation';
+import { createStackNavigator, createTabNavigator, 
+} from 'react-navigation';
 
 import Landing from '../Screens/Landing';
 import News from '../Screens/News';
@@ -9,7 +10,9 @@ import FullStory from '../Screens/Fullstory';
 
 export default createStackNavigator ({
     Home: {
+        
         screen: createTabNavigator({
+            
             Landing: {
                 screen: Landing,
             },
@@ -32,6 +35,6 @@ export default createStackNavigator ({
    
     FullStory: {
         screen: FullStory,
-    },
+    }
     
 })
