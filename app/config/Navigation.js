@@ -25,10 +25,13 @@ export default createStackNavigator ({
             Video: {
                 screen: Video,
             },
+           
         }),
+        
     },
-
+   
     FullStory: {
         screen: FullStory,
     },
+    
 })

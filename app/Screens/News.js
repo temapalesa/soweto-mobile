@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {View, Text, Image, ScrollView, Button } from 'react-native';
-import {Tile, Divider} from 'react-native-elements'
+import {View, Text, Image, ScrollView,  } from 'react-native';
+import {Tile, Divider,  Button } from 'react-native-elements'
 import { Container,  Card, CardItem, Body, Icon,  Left, Right, DeckSwiper,  Thumbnail } from "native-base";
 
 
@@ -106,52 +106,64 @@ class News extends Component {
      </Body>
      </Left>
  </CardItem>
-
+ <Divider style={{ backgroundColor: '#DD2C00', size:80}} />
  <CardItem>
 
  <Left>
-     <Thumbnail square source={{uri: 'https://turntable.kagiso.io/images/Limpopo_heist_R71_1.width-800.jpg'}} style={{height:90, width:150}}/>
+     <Thumbnail square source={{uri: 'http://cdn.primedia.co.za/primedia-broadcasting/image/upload/c_fill,h_289,q_70,w_463/kbpmkiueurmufjmgctnw'}} style={{height:90, width:150}}/>
      <Body>
-     <Text style={{justifyContent:'center', color:'black',  fontSize: 19}}>WATCH: Another fedility BOM happened yesterday mid-day </Text>
+     <Text style={{justifyContent:'center', color:'black',  fontSize: 19}}>TEMBISA RESIDENTS REBUILD HOMES IN WAKE OF TORNADO</Text>
      </Body>
      </Left>
 
  </CardItem>
-
+ <Divider style={{ backgroundColor: '#DD2C00', size:80}} />
 <CardItem>
 
 <Left>
-    <Thumbnail square source={{uri: 'https://turntable.kagiso.io/images/Limpopo_heist_R71_1.width-800.jpg'}} style={{height:90, width:150}}/>
+    <Thumbnail square source={{uri: 'https://tembisan.co.za/wp-content/uploads/sites/29/2015/04/Murde_637961173.jpg'}} style={{height:90, width:150}}/>
     <Body>
-    <Text style={{justifyContent:'center', color:'black',  fontSize: 19}}>WATCH: Another fedility BOM happened yesterday mid-day </Text>
+    <Text style={{justifyContent:'center', color:'black',  fontSize: 19}}>A 28-year-old local taxi driver was stabbed to death in a street in Phomolong Section in Tembisa.</Text>
     </Body>
     </Left>
 
 </CardItem>
 
+<Divider style={{ backgroundColor: '#DD2C00', size:80}} />
 <CardItem>
 
 <Left>
-    <Thumbnail square source={{uri: 'https://turntable.kagiso.io/images/Limpopo_heist_R71_1.width-800.jpg'}} style={{height:90, width:150}}/>
+    <Thumbnail square source={{uri: 'https://africanreporter.co.za/wp-content/uploads/sites/32/2015/12/49afgencleants_76856.jpg'}} style={{height:90, width:150}}/>
     <Body>
-    <Text style={{justifyContent:'center', color:'black',  fontSize: 19}}>WATCH: Another fedility BOM happened yesterday mid-day </Text>
+    <Text style={{justifyContent:'center', color:'black',  fontSize: 19}}> Clean City Neighbourhood Fridays underway </Text>
     </Body>
     </Left>
 
 </CardItem>
 
- <Divider style={{ backgroundColor: '#E65100' }} />
+ <Divider style={{ backgroundColor: '#DD2C00', size:80}} />
 
 <CardItem>
 
-    <Body>
-
-      <Icon name='envelope' />
-    <Text style={{justifyContent:'center', fontSize: 19, fontFamily:'Lato'}}>Subscribe to our newsletters</Text>
-    </Body>
-
-
+  <Body>
+      <Text style={{fontFamily:'Lato,', fontSize: 24,marginLeft:50, marginTop:10, color:'black'}}>Subscribe to our newsletter </Text>
+      <Button
+  title='SUBSCRIBE'
+  buttonStyle={{
+    backgroundColor: '#D50000',
+    width: 150,
+    height: 35,
+    borderColor: "transparent",
+    borderWidth: 0,
+    borderRadius: 5,
+    marginTop: 17, 
+    marginLeft: 100,
+  }}
+/>
+ 
+  </Body>
 </CardItem>
+<Divider style={{ backgroundColor: '#DD2C00', size:80}} />
 
  </ScrollView>
 
