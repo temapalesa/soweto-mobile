@@ -27,11 +27,11 @@ class Sports extends Component {
                      
                         return( 
                             <View key={index} >
-                             <Card >
+                             <Card style={{ height: 500}}>
                                     <CardItem >
                                       
                                             <Left>
-                                    <Thumbnail square source={{width: 90, height: 80}}
+                                    <Thumbnail square source={{width: 90, height: 70}}
                                         resizeMode="cover"
                                         source={{uri: data.picture}}
                                         />
