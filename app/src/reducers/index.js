@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 
-import articleReducers from './articlesReducers';
+import articleReducers from './ArticleReducer';
+import articlesReducers from './articlesReducers';
 
 export default combineReducers({
 
-    articles: articleReducers,
+    articles: articlesReducers,
+    article: articleReducers,
 });

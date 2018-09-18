@@ -1,30 +1,57 @@
 import React, { Component } from 'react';
-import {View, Text,ScrollView, ActivityIndicator,Image , StyleSheet } from 'react-native';
+import {View, Text,ScrollView, ActivityIndicator,Image, Platform, ToolbarAndroid } from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../src/actions';
-import { CardItem, Card, Left, Body, Right, Thumbnail, Content } from 'native-base';
-
-
+import { CardItem, Card, Left, Body, Right, Thumbnail, Content, } from 'native-base';
+import { StatusBar } from 'react-native';
 
 
 
 class Home extends Component {
 
-
+    
     componentDidMount(){
         this.props.fetchArticles();
-        
+        //this.props.fetchArticle('');
     }
-
+    
+    article(id){
+        console.log('ghfhghjg',id)
+        //this.props.fetchArticle(id);
+    }
   
         render() {
             
             const {articles} = this.props;
-            console.log("ARTICLES",articles);
-            return (
-              <View> 
-            
 
+            return (
+                <View> 
+                   <StatusBar  
+     
+translucent
+backgroundColor="#B71C1C"
+animated
+/>
+{ Platform.OS === 'android' && Platform.Version >= 20 ?
+<View
+  style={{
+    height: 50,
+    backgroundColor: "#B71C1C",
+  }}
+/>
+: null }
+<ToolbarAndroid
+style={{
+  height:45,
+  backgroundColor: "#B71C1C",
+ 
+}}
+titleColor="white"
+title="Soweto Observer"
+/>
+      
+               
+      
                 <ScrollView>
 
                     {!articles?<ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true}/>
@@ -33,23 +60,25 @@ class Home extends Component {
                         return( 
                             <Content>
 
-                            <View key={index} >
+                            <View key={index} onPress={()=>this.article(data._id)}>
                       
-                             <Card style={{height:100, marginTop:20, borderTopColor:"#FF9800", borderBottomColor:"#FF9800",}}>
+                             <Card style={{height:250, marginTop:5, }} onPress={()=>this.article(data._id)}>
 
-                                    <CardItem>
-                                      
-                                            <Left>
-                                    <Thumbnail square source={{width: 250, height: 950, }}
+                                    <CardItem style ={{}}onPress={()=>{this.article(data._id)}}>
+                                      <Left>
+                                            
+                                    <Thumbnail source={{width: 10, height:10,  }}
                                         source={{uri: data.picture}}
                                         />
                                         <Body>
-                                        <Text style={{fontFamily:"Lato", fontSize:17, color:"black"}} >{data.title}  
+                                        <Text style={{fontFamily:"SEGIO UI", }} >{data.title}  
                                         </Text>
+                                      
                                         </Body>
                                         </Left>
-                                       
-                                        </CardItem>
+                                    
+                                         </CardItem>
+                                         
                                         
                                      
                                         </Card> 

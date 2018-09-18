@@ -17,7 +17,7 @@ class Sports extends Component {
         render() {
             
             const {articles} = this.props;
-            console.log("ARTICLES",articles);
+           
             return (
              
 
@@ -27,7 +27,7 @@ class Sports extends Component {
                      
                         return( 
                             <View key={index} >
-                             <Card style={{ height: 500}}>
+                             <Card style={{ height: 200}}>
                                     <CardItem >
                                       
                                             <Left>
@@ -36,7 +36,7 @@ class Sports extends Component {
                                         source={{uri: data.picture}}
                                         />
                                         <Body>
-                                        <Text style={{fontFamily:'Lato', fontSize:17, color:'black'}} >{data.title}  
+                                        <Text style={{fontFamily:'Lato', }} >{data.title}  
                                         </Text>
                                         </Body>
                                         </Left>
