@@ -1,5 +1,6 @@
 import { createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 import { StyleSheet, View, Text } from "react-native";
+import React, { Component } from 'react';
 
 import  Home from '../Screens/Home';
 import News from '../Screens/News';
@@ -16,6 +17,12 @@ export default createStackNavigator ({
             
             Home: {
                 screen: Home,
+                tabBarOptions: {
+                    activeTinColor: 'e91e63',
+                    labelStyle:{
+                        fontSize: 30,
+                    }
+                }
                 
             },
 

@@ -27,7 +27,7 @@ article(id){
           <View> 
                
              
-          <ScrollView>
+          <ScrollView horizontal={true}>
 
               {!articles?<ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true}/>
               : articles.map((data,index) =>{
@@ -37,28 +37,23 @@ article(id){
 
                       <View key={index} onPress={()=>this.article(data._id)}>
                 
-                       <Card style={{height:250, marginTop:5, }} onPress={()=>this.article(data._id)}>
+                       <Card style={{height:250, marginTop:10, }} onPress={()=>this.article(data._id)}>
 
                               <CardItem onPress={()=>{this.article(data._id)}}>
-                                <Left>
-                                      
-                              <Thumbnail source={{width: 10, height:10,  }}
-                                  source={{uri: data.picture}}
-                                  />
-                                  <Body>
-                                  <Text style={{fontFamily:"SEGIO UI", }} >{data.title}  
-                                  </Text>
                                 
-                                  </Body>
-                                  </Left>
-                                  <Body>
-                                  <Image source={{uri: data.picture}} style={{height: 200, width: null, flex: 1}}/>
-                                  </Body>
-                                   </CardItem>
-                                   
-                                  
-                               
-                                  </Card> 
+                                         
+                              <Body>
+                                     
+                                     <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 250, marginLeft:3,  }}/>
+                                     <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center' }} >{data.title}  
+                                  </Text>
+                                     </Body>
+                                        
+                                     </CardItem>
+                                        </Card> 
+                                       
+                              
+                                
                                  
                          
                       </View>

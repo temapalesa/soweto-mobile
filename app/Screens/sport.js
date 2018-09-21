@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {View, Text,ScrollView, ActivityIndicator,Image } from 'react-native';
+import {View, Text,ScrollView, ActivityIndicator,Image, Platform, ToolbarAndroid, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../src/actions';
-import { CardItem, Card, Left, Body, Right, Thumbnail  } from 'native-base';
-
+import { CardItem, Card, Left, Body, Right, Thumbnail, Content } from 'native-base';
+import { StatusBar } from 'react-native';
 
 
 
@@ -19,40 +19,74 @@ class Sports extends Component {
             const {articles} = this.props;
            
             return (
-             
+             <View>
+                <StatusBar                  
+  
+translucent
+backgroundColor="#B71C1C"
+animated
+/>
 
-                <ScrollView>
-                    {!articles?<ActivityIndicator size="large" color="#0097A7" />
+
+
+{ Platform.OS === 'android' && Platform.Version >= 20 ?
+<View
+  style={{
+    height: 50,
+    backgroundColor: "#B71C1C",
+  }}
+/>
+: null }
+<ToolbarAndroid
+style={{
+  height:45,
+  backgroundColor: "#B71C1C",
+ 
+}}
+titleColor="white"
+title="Soweto Observer"
+titleStyle={{}}
+
+
+
+/>
+
+              
+                <ScrollView   horizontal={true}>
+
+                    {!articles?<ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true}/>
                     : articles.map((data,index) =>{
                      
                         return( 
-                            <View key={index} >
-                             <Card style={{ height: 200}}>
-                                    <CardItem >
-                                      
-                                            <Left>
-                                    <Thumbnail square source={{width: 90, height: 70}}
-                                        resizeMode="cover"
-                                        source={{uri: data.picture}}
-                                        />
-                                        <Body>
-                                        <Text style={{fontFamily:'Lato', }} >{data.title}  
-                                        </Text>
-                                        </Body>
-                                        </Left>
-                                       
-                                        </CardItem>
+                            <Content>
+
+                            <View key={index} onPress={()=>this.article(data._id)}>
+                      
+                             <Card style={{height:250, marginTop:10, }} onPress={()=>this.article(data._id)}>
+
+                                    <CardItem>
+                                    
+                                      <Body>
+                                     <TouchableOpacity  onPress={()=>this.article(data._id)}>
+                                     <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 250, marginLeft:3,  }}/>
+                                     <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center' }} >{data.title}  
+                                  </Text>
+                                  </TouchableOpacity>
+                                     </Body>
                                         
-                                     
-                                        </Card>  
+                                     </CardItem>
+                                        </Card> 
                                        
                                
                             </View>
+                            </Content>
                             
                         )
                     })
                     }
-                </ScrollView>           
+                    
+                </ScrollView>   
+                </View>        
             )
         }
     }
