@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import {View, Text,ScrollView, ActivityIndicator,Image, Platform, ToolbarAndroid, TouchableOpacity} from 'react-native';
+import {View, 
+        Text,
+        ScrollView, 
+        ActivityIndicator,Image,
+        Platform, 
+        ToolbarAndroid, 
+        TouchableOpacity , 
+        FlatList
+    } from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../src/actions';
 import { CardItem, Card, Left, Body, Right, Thumbnail, Content } from 'native-base';
@@ -20,36 +28,25 @@ class Sports extends Component {
            
             return (
              <View>
-                <StatusBar                  
-  
-translucent
-backgroundColor="#B71C1C"
-animated
-/>
+           <StatusBar                  
+                    
+                    translucent
+                    backgroundColor="#263238"
+                    animated
+                    />
 
+                <ToolbarAndroid
+                    style={{
+                height:45,
+                    backgroundColor: "#263238",
+        
+                        }}
+                        
+                            titleColor="white"
+                        title="Soweto Observer"
+                            titleStyle={{}}
 
-
-{ Platform.OS === 'android' && Platform.Version >= 20 ?
-<View
-  style={{
-    height: 50,
-    backgroundColor: "#B71C1C",
-  }}
-/>
-: null }
-<ToolbarAndroid
-style={{
-  height:45,
-  backgroundColor: "#B71C1C",
- 
-}}
-titleColor="white"
-title="Soweto Observer"
-titleStyle={{}}
-
-
-
-/>
+                                />
 
               
                 <ScrollView   horizontal={true}>
@@ -85,7 +82,8 @@ titleStyle={{}}
                     })
                     }
                     
-                </ScrollView>   
+                </ScrollView> 
+                
                 </View>        
             )
         }

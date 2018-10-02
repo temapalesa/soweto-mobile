@@ -14,20 +14,28 @@ export default createStackNavigator ({
     
     Home: {
         screen: createBottomTabNavigator({
+
             
             Home: {
                 screen: Home,
-                tabBarOptions: {
-                    activeTinColor: 'e91e63',
-                    labelStyle:{
-                        fontSize: 30,
-                    }
-                }
-                
+                 tabBarOptions :{
+                     showLabel : true ,
+                     labelStyle : {
+                         fontSize : 20
+                     },
+                     style :{
+                        backgroundColor : '#263238',
+                     }
+                 },
             },
 
             News: {
                 screen: News,
+                tabBarOptions:{
+                    labelStyle:{
+                        fontSize : 25
+                    }
+                }
             },
 
             Sports: {
@@ -45,24 +53,8 @@ export default createStackNavigator ({
     FullStory: {
         screen: FullStory,
     },
+       
+        
     
-})
-const styles = StyleSheet.create({
-	tab: {
-		padding: 5
-	},
-	indicator: {
-		width: 0,
-		height: 0
-	},
-	label: {
-		fontSize: 10
-	},
-	icon: {
-		width: 20,
-		height: 20,
-	
-	},
-	
 });
 

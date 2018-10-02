@@ -1,96 +1,106 @@
 import React, { Component } from 'react';
-import {View,StyleSheet, Text,ScrollView, ActivityIndicator,Image, Platform, ToolbarAndroid } from 'react-native';
+import {
+     View,
+     StyleSheet,
+     Text,
+     ScrollView,
+     ActivityIndicator,
+     Image,
+     Platform,
+     ToolbarAndroid ,
+     Dimensions,
+     TouchableOpacity 
+    } from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../src/actions';
 import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Icon, Button} from 'native-base';
 import { StatusBar } from 'react-native';
+import { ListItem } from 'react-native-elements';
 
 
 
 class Home extends Component {
+    state = {animating : true} ;
 
+  
     
     componentDidMount(){
         this.props.fetchArticles();
-        //this.props.fetchArticle('');
+        this.props.fetchArticle('');
     }
     
     article(id){
-        console.log('ghfhghjg',id)
-        //this.props.fetchArticle(id);
+        this.props.fetchArticle(id);
+        this.props.navigation.navigate('FullStory');
     }
   
         render() {
+            const animating = this.state.animating ;
             
             const {articles} = this.props;
-
+            console.log(this.article);
             return (
                 <View> 
-<StatusBar                  
-  
-translucent
-backgroundColor="#B71C1C"
-animated
-/>
+                    <StatusBar                  
+                    
+                    translucent
+                    backgroundColor="#263238"
+                    animated
+                    />
+
+                <ToolbarAndroid
+                    style={{
+                height:45,
+                    backgroundColor: "#263238",
+        
+                        }}
+                        
+                            titleColor="white"
+                        title="Soweto Observer"
+                            titleStyle={{}}
+
+                                />
+                    <ScrollView>
+            
+                        <ScrollView >
+                    
+
+                            {!articles.length==0?articles.map((data,index) =>{
+                            
+                            return( 
+                                <Content>
+
+                                    <TouchableOpacity key={index} onPress={()=>this.article(data._id)}>
+                                        <View >
+                            
+                                            <Card style={{height:250, marginTop:10, marginLeft:5, marginRight:5 }} >
+
+                                                <CardItem>
+                                                        <Body>
+                                                            <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 350, marginLeft:1, marginRight:2 }}/>
+                                                            <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center',color:'black', marginLeft:25, fontSize:18 }} >{data.title} </Text>
+                                                        </Body>      
+                                                </CardItem>
+                                            </Card> 
+                                                    
+                                            
+                                        </View>
+                                    </TouchableOpacity>
+                                </Content>
+                                )
+                            })
+                            : <ActivityIndicator 
+                            size="large" 
+                            color="#bc2b78"
+                            hidesWhenStopped={true}
+                            style = {{paddingVertical: 50, paddingHorizontal:180 , alignSelf:'stretch'}}
+                            />
+                            }   
+                        </ScrollView> 
 
 
 
-{ Platform.OS === 'android' && Platform.Version >= 20 ?
-<View
-  style={{
-    height: 50,
-    backgroundColor: "#B71C1C",
-  }}
-/>
-: null }
-<ToolbarAndroid
-style={{
-  height:45,
-  backgroundColor: "#B71C1C",
- 
-}}
-titleColor="white"
-title="Soweto Observer"
-titleStyle={{}}
-
-
-
-/>
-      
-               
-      
-                <ScrollView   horizontal={true}>
-
-                    {!articles?<ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true}/>
-                    : articles.map((data,index) =>{
-                     
-                        return( 
-                            <Content>
-
-                            <View key={index} onPress={()=>this.article(data._id)}>
-                      
-                             <Card style={{height:250, marginTop:10, }} onPress={()=>this.article(data._id)}>
-
-                                    <CardItem>
-                                    
-                                      <Body>
-                                     
-                                     <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 250, marginLeft:3,  }}/>
-                                     <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center' }} >{data.title}  
-                                  </Text>
-                                     </Body>
-                                        
-                                     </CardItem>
-                                        </Card> 
-                                       
-                               
-                            </View>
-                            </Content>
-                        )
-                    })
-                    }
-                </ScrollView> 
-              
+                        </ScrollView>
                 </View>  
            
               
@@ -99,13 +109,35 @@ titleStyle={{}}
         }
     }
     
-   
+   const styles = StyleSheet.create({
 
-    function mapStateToProps({articles}) {
+        activityIndic : {
+            flex : 1 ,
+            justifyContent : 'center',
+            alignItems : 'center',
+            marginTop : 70 ,
+            height : 80
+        } ,
+        activityIndicat : {
+            flex : 1 , 
+            display : 'flex',
+        },
+
+       
+
+
+   }) ;
+
+
+
+    function mapStateToProps({articles}) { 
      return {
          articles
         }
     }
     
     export default connect(mapStateToProps,actions)(Home);
+
+
+
 

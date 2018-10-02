@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {View, Text, Image, ScrollView,  } from 'react-native';
+import {View, Text, Image, ScrollView, ToolbarAndroid  } from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../src/actions';
 import {Tile, Divider,  Button } from 'react-native-elements'
 import {Content,  Card, CardItem, Body, Icon,  Left, Right, DeckSwiper,  Thumbnail } from "native-base";
-
+import { StatusBar } from 'react-native';
 
 
 
@@ -12,12 +12,12 @@ class News extends Component {
 
   componentDidMount(){
     this.props.fetchArticles();
-    //this.props.fetchArticle('');
+    this.props.fetchArticle('');
 }
 
 article(id){
     console.log('ghfhghjg',id)
-    //this.props.fetchArticle(id);
+    this.props.fetchArticle(id);
 }
      
     render() {
@@ -25,7 +25,25 @@ article(id){
         return (
 
           <View> 
-               
+                  <StatusBar                  
+                    
+                    translucent
+                    backgroundColor="#263238"
+                    animated
+                    />
+
+                <ToolbarAndroid
+                    style={{
+                height:45,
+                    backgroundColor: "#263238",
+        
+                        }}
+                        
+                            titleColor="white"
+                        title="Soweto Observer"
+                            titleStyle={{}}
+
+                                />
              
           <ScrollView horizontal={true}>
 
