@@ -26,3 +26,4 @@ render()
   
 
 AppRegistry.registerComponent('sowetoObserver', () => Index);
+
