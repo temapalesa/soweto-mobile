@@ -15,7 +15,7 @@ import * as actions from '../src/actions';
 import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Container, } from 'native-base';
 import { StatusBar } from 'react-native';
 import HTML from 'react-native-render-html';
-
+import Hearder from './underFullStory';
 
 
 
@@ -34,23 +34,18 @@ class Sports extends Component {
 
         <ScrollView>
             <Container>
-
         <Card style={{color: 'black', marginTop:10, }}>
             <Image source={{uri: article.picture}}  style={{height:250, width:400,  marginRight:20, marginTop:15 }}/>
             <Text style={{textAlign:'center', marginTop: 15, color: 'black', fontSize:18}}>{article.title}</Text>
             <HTML html={article.body} style={{marginLeft:'auto', marginRight: 'auto'}}/>
-          
         </Card>
-
-
+        
 </Container>
+  
       </ScrollView>   
-
-
+ <Hearder {...this.props}/>
                 </View>  
-    
-         
-               
+          
             )
         }
     }
