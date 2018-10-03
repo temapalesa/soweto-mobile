@@ -51,17 +51,22 @@ class Home extends Component {
                             {!articles.length==0?articles.map((data,index) =>{
                             
                             return( 
-                                <Content>
+                                <Content  style={{backgroundColor: '#fff'}}>
 
                                     <TouchableOpacity key={index} onPress={()=>this.article(data._id)}>
                                         <View >
                             
                                             <Card style={{height:250, marginTop:10, marginLeft:5, marginRight:5 }} >
 
-                                                <CardItem>
+                                                <CardItem >
+                                                 
                                                         <Body>
+
                                                             <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 350, marginLeft:1, marginRight:2 }}/>
+                                        
                                                             <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center',color:'black', marginLeft:25, fontSize:18 }} >{data.title} </Text>
+                                                          
+                                                          
                                                         </Body>      
                                                 </CardItem>
                                             </Card> 

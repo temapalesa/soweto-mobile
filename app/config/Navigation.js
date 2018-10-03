@@ -36,12 +36,12 @@ let tabNavigatorConfig = {
     animationEnabled: true,
     swipeEnabled: true,
     tabBarOptions: {
-        activeTintColor: 'blue',
+        activeTintColor: '#FAFAFA',
         labelStyle: {
             fontSize: 13,
         },
         style: {
-            backgroundColor: '#59cbbd',
+            backgroundColor: '#F57C00',
             padding: -10
         },    
         // showLabel: false    
@@ -57,10 +57,10 @@ let routeConfigs3 = {
         screen: Stabs,
     },
     
-    mortality:{
+    FullStory:{
         screen: FullStory,
         navigationOptions:{
-            title:'mortality'
+            title:'FullStory'
         }
     },
     

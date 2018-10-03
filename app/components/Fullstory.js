@@ -31,28 +31,6 @@ class Sports extends Component {
            
             return (
              <View>
-                <StatusBar                  
-                    
-                                 
-                    
-                    translucent
-                    backgroundColor="#263238"
-                    animated
-                    />
-
-                <ToolbarAndroid
-                    style={{
-                height:45,
-                    backgroundColor: "#263238",
-        
-                        }}
-                        
-                            titleColor="white"
-                        title="Soweto Observer"
-                            titleStyle={{}}
-
-                                />
-
 
         <ScrollView>
             <Container>

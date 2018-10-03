@@ -5,7 +5,7 @@ import * as actions from '../src/actions';
 import {Tile, Divider,  Button } from 'react-native-elements'
 import {Content,  Card, CardItem, Body, Icon,  Left, Right, DeckSwiper,  Thumbnail } from "native-base";
 import { StatusBar } from 'react-native';
-
+import Header from '../components/HeaderComponent';
 
 
 class News extends Component {
@@ -25,45 +25,27 @@ article(id){
         return (
 
           <View> 
-                  <StatusBar                  
-                    
-                    translucent
-                    backgroundColor="#263238"
-                    animated
-                    />
-
-                <ToolbarAndroid
-                    style={{
-                height:45,
-                    backgroundColor: "#263238",
-        
-                        }}
-                        
-                            titleColor="white"
-                        title="Soweto Observer"
-                            titleStyle={{}}
-
-                                />
+                 <Header {...this.props} />
              
-          <ScrollView horizontal={true}>
+          <ScrollView >
 
               {!articles?<ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true}/>
               : articles.map((data,index) =>{
                
                   return( 
-                      <Content>
+                      <Content style={{backgroundColor: '#fff'}}>
 
                       <View key={index} onPress={()=>this.article(data._id)}>
                 
-                       <Card style={{height:250, marginTop:10, }} onPress={()=>this.article(data._id)}>
+                       <Card style={{height:250, marginTop:10, marginLeft:5, marginRight:5 }} onPress={()=>this.article(data._id)}>
 
                               <CardItem onPress={()=>{this.article(data._id)}}>
                                 
                                          
                               <Body>
                                      
-                                     <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 250, marginLeft:3,  }}/>
-                                     <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center' }} >{data.title}  
+                                     <Thumbnail square source={{uri: data.picture}} style={{height: 150, width:380, }}/>
+                                     <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center',color:'black', marginLeft:25, fontSize:18 }} >{data.title}  
                                   </Text>
                                      </Body>
                                         

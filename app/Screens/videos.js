@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {View, Text , Dimensions,StyleSheet ,Image, Header } from 'react-native';
+import {View, Text , Dimensions,StyleSheet ,Image,  } from 'react-native';
 import {WebView} from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { Container, Content, CardItem ,Card } from 'native-base';
+import Header from '../components/HeaderComponent';
 
 
 
@@ -15,7 +16,11 @@ class Video extends Component{
          return(
 
             <View>
-    
+            <Header {...this.props} />
+            <Content style={{backgroundColor: '#fff'}}>
+
+            </Content>
+
 
             </View>
          )
