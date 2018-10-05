@@ -15,7 +15,7 @@ import * as actions from '../src/actions';
 import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Container, } from 'native-base';
 import { StatusBar } from 'react-native';
 import HTML from 'react-native-render-html';
-import Hearder from './underFullStory';
+import SubTitles from './underFullStory';
 
 
 
@@ -43,7 +43,7 @@ class Sports extends Component {
 </Container>
   
       </ScrollView>   
- <Hearder {...this.props}/>
+ <SubTitles {...this.props}/>
                 </View>  
           
             )
