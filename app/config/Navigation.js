@@ -1,5 +1,5 @@
 
-import { AppRegistry, Dimensions } from 'react-native';
+import { Dimensions } from 'react-native';
 import {DrawerNavigator, TabNavigator,StackNavigator} from 'react-navigation';
 import {
   Platform,
