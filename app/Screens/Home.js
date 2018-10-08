@@ -61,7 +61,7 @@ class Home extends Component {
                                                 <CardItem >
                                                  
                                                         <Body>
-
+                                                            
                                                             <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 350, marginLeft:1, marginRight:2 }}/>
                                         
                                                             <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center',color:'black', marginLeft:25, fontSize:18 }} >{data.title} </Text>

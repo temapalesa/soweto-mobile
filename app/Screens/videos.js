@@ -22,7 +22,7 @@ class Videos extends Component{
     ActivityIndicatorLoadingView(){
         return (
             <ActivityIndicator
-                color='#009688'
+                color='red'
                 size='large'
                 style={styles.ActivityIndicatorStyle}
             />
@@ -44,14 +44,22 @@ class Videos extends Component{
                     <Card style={{width: 1000}}>
                        
                             <WebView
-                                source={{uri:'https://www.youtube.com/embed/PGUMRVowdv8'}}
+                                source={{uri:'https://www.youtube.com/watch?v=jv-hIAYG6KM'}}
                                 style={styles.WebViewStyle}
-                                javaScriptEnabled={true}
-                                domStorageEnabled={true}
+                                startInLoadingState ={true}
                                 renderLoading={this.ActivityIndicatorLoadingView}
-                                startInLoadingState={true}
+                                geolocationEnabled={true}
                             />
-                       
+                        <CardItem>
+                            <Image
+                                 source={require('../Images/download.png')}
+                                style={{width:50 , height: 50 , borderRadius: 30}}
+                            />
+                             <Text style={{flex : 1}}> Parts of the Bara taxi rank in Soweto have been closed for the time being.
+                                    This after a shoot out between two rival taxi associations...
+                                  Scores of commuters were left stranded as police fear a taxi war may be brewing.</Text>
+                                 
+                            </CardItem>
                     </Card>
                
                 </Content>
@@ -71,7 +79,7 @@ const styles = StyleSheet.create({
             flex : 1,
             marginTop : 20  ,
             width : 500 ,
-            height : 150 
+            height : 300 ,  
        },
        ActivityIndicatorStyle : {
             position : 'absolute',

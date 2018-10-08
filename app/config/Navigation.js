@@ -13,9 +13,11 @@ import NewsScreen from '../Screens/News';
 import VideoScreen from '../Screens/videos';
 import SportsScreen from '../Screens/sport';
 import FullStory from '../Screens/Fullstory';
+import SplashScreen from '../Screens/SplashScreen';
 
 import { Home,Trending,Sports,Videos, About,Contact} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
+
 let routeConfigs2 = {
     
     Home: {
@@ -48,10 +50,18 @@ let tabNavigatorConfig = {
     },    
     order: [ Home,Trending,Sports, Videos, ],
 };
+
 const Stabs = TabNavigator(routeConfigs2, tabNavigatorConfig);
 
 let routeConfigs3 = {
-    
+
+    SplashScreen : {
+        screen : SplashScreen ,
+        navigationOptions : {
+            title : 'Splash'
+        }
+    }
+    ,
     Home: {
         path: '/',
         screen: Stabs,
