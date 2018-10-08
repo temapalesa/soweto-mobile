@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { AppRegistry, Dimensions } from 'react-native';
+
+import { Dimensions } from 'react-native';
 import {DrawerNavigator, TabNavigator,StackNavigator} from 'react-navigation';
 import {
   Platform,
@@ -13,7 +13,8 @@ import NewsScreen from '../Screens/News';
 import VideoScreen from '../Screens/videos';
 import SportsScreen from '../Screens/sport';
 import FullStory from '../Screens/Fullstory';
-import SplashScreen from '../Screens/SplashScreen';
+import AboutComponent from '../components/AboutComponent';
+import SplashScreen  from '../Screens/SplashScreen';
 
 import { Home,Trending,Sports,Videos, About,Contact} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
@@ -87,10 +88,10 @@ let routeConfigs = {
         screen: Stacks,
     },
 
-    // About: {
-    //     path: '/info',
-    //     screen: AboutComponent,
-    // },
+    About: {
+        path: '/info',
+        screen: AboutComponent,
+    },
     // Contact: {
     //     path: '/settings',
     //     screen: ContactComponent,
@@ -111,7 +112,7 @@ let drawerNavigatorConfig ={
         activeTintColor: 'red'
         
     },
-    // order: [Home,About,Contact]
+    order: [Home,About,]
 
 };
 export default App = DrawerNavigator(routeConfigs,drawerNavigatorConfig);
