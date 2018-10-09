@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text, Image,Dimensions, StyleSheet, Tile, TouchableHighlight,TouchableOpacity} from 'react-native';
 import { Card, Button, } from 'react-native-elements';
-import {Icon} from 'react-native-elements';
+
 import HeaderComponent from './HeaderComponent';
 
 
