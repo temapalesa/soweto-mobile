@@ -15,8 +15,11 @@ import SportsScreen from '../Screens/sport';
 import FullStory from '../Screens/Fullstory';
 import AboutComponent from '../components/AboutComponent';
 import SplashScreen  from '../Screens/SplashScreen';
+import Entertainment from '../components/Entertainment';
+import Crime from '../components/Crime';
 
-import { Home,Trending,Sports,Videos, About,Contact} from '../../screenNames';
+
+import { Home,Trending,Sports,Videos, About,Enter, Crim} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
 
 let routeConfigs2 = {
@@ -91,7 +94,21 @@ let routeConfigs = {
     About: {
         path: '/info',
         screen: AboutComponent,
+
     },
+
+     Enter:{
+          path:'/',
+          screen: Entertainment,
+     },
+
+    Crim: {
+        path: '/',
+        screen: Crime,
+    }
+
+
+ 
     // Contact: {
     //     path: '/settings',
     //     screen: ContactComponent,
@@ -112,7 +129,7 @@ let drawerNavigatorConfig ={
         activeTintColor: 'red'
         
     },
-    order: [Home,About,]
+    order: [Home,About,Enter, Crim]
 
 };
 export default App = DrawerNavigator(routeConfigs,drawerNavigatorConfig);

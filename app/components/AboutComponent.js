@@ -8,7 +8,7 @@ const backgroundColor = '#007256';
 
 export default class AboutComponent extends Component {
     static navigationOptions = ({navigation}) => { 
-        let drawerLabel ='About Us' ;
+        let drawerLabel ='About us ' ;
         let drawerIcon= () => (
             <Image 
             source= {require('../Icons/contact-us-icon-300x280.png')}
@@ -16,7 +16,7 @@ export default class AboutComponent extends Component {
             />
         );
         return { drawerLabel,drawerIcon};
-        
+         
     }
 
     render() {
