@@ -13,9 +13,9 @@ import {
     } from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../src/actions';
-import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Icon, Button} from 'native-base';
+import { CardItem,  Left, Body, Right, Thumbnail, Content, Icon, Button} from 'native-base';
 import { StatusBar } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { ListItem,Card } from 'react-native-elements';
 import Header from '../components/HeaderComponent';
 
 
@@ -62,7 +62,7 @@ class Home extends Component {
                                                  
                                                         <Body>
                                                             
-                                                            <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 350, marginLeft:1, marginRight:2 }}/>
+                                                            <Image source={{uri: data.picture}} style={{resizeMode:'cover'}}/>
                                         
                                                             <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center',color:'black', marginLeft:25, fontSize:18 }} >{data.title} </Text>
                                                           

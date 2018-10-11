@@ -22,13 +22,14 @@ class Entertainment extends Component {
     static navigationOptions = ({navigation}) => { 
         let drawerLabel ='Entertainment ' ;
         let drawerIcon= () => (
-           < Icon
-            icon={{name: 'arrow-right'}}
-             />
+            <Image 
+            source= {require('../Icons/entertainment-icon-large.png')}
+            style={{width:40, height:40}}
+            />
         );
         return { drawerLabel,drawerIcon};
      
-         
+       
     }
     
     render(){

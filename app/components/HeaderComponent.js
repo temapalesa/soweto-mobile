@@ -46,7 +46,7 @@ export default class HeaderComponent extends Component{
         // alignItems:'center',
         
     }}
-        source={require('../Icons/download.png')}/>
+        source={require('../Icons/download.1.png')}/>
         </View>
         </View>);
     }

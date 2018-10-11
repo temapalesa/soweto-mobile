@@ -24,9 +24,10 @@ class Crime extends Component {
     static navigationOptions = ({navigation}) => { 
         let drawerLabel ='Crime' ;
         let drawerIcon= () => (
-            <Icon
-            icon={{name: 'arrow-right'}}
-             />
+            <Image 
+            source= {require('../Icons/wcmsp-211764.png')}
+            style={{width:50, height:50}}
+            />
            
         );
         return { drawerLabel,drawerIcon};

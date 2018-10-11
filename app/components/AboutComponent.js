@@ -11,8 +11,8 @@ export default class AboutComponent extends Component {
         let drawerLabel ='About us ' ;
         let drawerIcon= () => (
             <Image 
-            source= {require('../Icons/contact-us-icon-300x280.png')}
-            style={{width:36, height:36}}
+            source= {require('../Icons/download.png')}
+            style={{width:40, height:40}}
             />
         );
         return { drawerLabel,drawerIcon};

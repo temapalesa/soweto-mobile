@@ -15,11 +15,12 @@ import SportsScreen from '../Screens/sport';
 import FullStory from '../Screens/Fullstory';
 import AboutComponent from '../components/AboutComponent';
 import SplashScreen  from '../Screens/SplashScreen';
+import PoloticsComp from '../components/PoloticsComponent';
+import LifestyleComponent from '../components/LifeStyle'
 import Entertainment from '../components/Entertainment';
-import Crime from '../components/Crime';
+import Crime from '../components/Crime'
 
-
-import { Home,Trending,Sports,Videos, About,Enter, Crim} from '../../screenNames';
+import { Home,Trending,Sports,Videos, About,Polotics,Lifestyle,Enter, Crim} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
 
 let routeConfigs2 = {
@@ -96,23 +97,23 @@ let routeConfigs = {
         screen: AboutComponent,
 
     },
+    Polotics: {
+        path: '/Polotics',
+        screen: PoloticsComp,
+    },
+    Lifestyle: {
+        path: '/Polotics',
+        screen: LifestyleComponent,
+    },
 
-     Enter:{
-          path:'/',
-          screen: Entertainment,
-     },
-
-    Crim: {
-        path: '/',
-        screen: Crime,
+    Enter:{
+        path:'/',
+        screen: Entertainment,
+    },
+    Crim:{
+        path:'/',
+        screen: Crime
     }
-
-
- 
-    // Contact: {
-    //     path: '/settings',
-    //     screen: ContactComponent,
-    // },
    
 
 };
@@ -129,7 +130,7 @@ let drawerNavigatorConfig ={
         activeTintColor: 'red'
         
     },
-    order: [Home,About,Enter, Crim]
+    order: [Home,About,Polotics,Lifestyle,Enter,Crim]
 
 };
 export default App = DrawerNavigator(routeConfigs,drawerNavigatorConfig);
