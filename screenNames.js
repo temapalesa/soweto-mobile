@@ -2,10 +2,10 @@ const Home = "Home";
 const Trending = "Trending";
 const Sports = "Sports";
 const Videos = "Videos";
-const Top = "Top"
+const Lifestyle = "Lifestyle"
 const About = "About"
-const Contact= "Contact"
+const Polotics= "Polotics"
 
 
 
-export { Home,Trending,Sports,Videos,Top,About,Contact} ;
+export { Home,Trending,Sports,Videos,Lifestyle,About,Polotics} ;

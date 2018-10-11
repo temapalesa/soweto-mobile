@@ -30,7 +30,6 @@ class Sports extends Component {
             return (
              <View>
             <Header {...this.props} />
-
               
                 <ScrollView >
 
