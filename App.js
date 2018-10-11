@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AppNav from './app/config/Navigation';
-
 import * as actions from './app/src/actions';
 import {connect} from 'react-redux';
 

@@ -1,77 +1,99 @@
 import React, { Component } from 'react';
 import { AppRegistry, Dimensions } from 'react-native';
-import {DrawerNavigator, TabNavigator,StackNavigator} from 'react-navigation';
+import { DrawerNavigator, TabNavigator, StackNavigator, createBottomTabNavigation, TabBarBottom } from 'react-navigation'
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
+    Platform,
+    StyleSheet,
+    Text,
+    View
 } from 'react-native';
-
-import  HomeScreen from '../Screens/Home';
+// import { SocialIcon } from 'react-native-elements';
+import HomeScreen from '../Screens/Home';
 import NewsScreen from '../Screens/News';
 import VideoScreen from '../Screens/videos';
 import SportsScreen from '../Screens/sport';
 import FullStory from '../Screens/Fullstory';
 
-import { Home,Trending,Sports,Videos, About,Contact} from '../../screenNames';
-var {height,width} = Dimensions.get('window');
+import { Home, Trending, Sports, Videos, About, Contact } from '../../screenNames';
+
+var { height, width } = Dimensions.get('window');
 let routeConfigs2 = {
-    
+
     Home: {
         screen: HomeScreen,
+        navigationOptions: {
+            tabBarLabel: 'HOME'
+        }
     },
     Trending: {
         screen: NewsScreen,
+        navigationOptions: {
+            tabBarLabel: 'TRENDING'
+        }
     },
     Sports: {
         screen: SportsScreen,
+        navigationOptions: {
+            tabBarLabel: 'SPORT'
+        }
     },
     Videos: {
         screen: VideoScreen,
+        navigationOptions: {
+            tabBarLabel: 'VIDEOS'
+        }
     },
 };
-let tabNavigatorConfig = {    
+
+
+
+let tabNavigatorConfig = {
     tabBarPosition: 'bottom',
     animationEnabled: true,
     swipeEnabled: true,
     tabBarOptions: {
-        activeTintColor: '#FAFAFA',
+        activeTintColor: '#168060',
+        inactiveTintColor: '#eef7f4',
         labelStyle: {
-            fontSize: 13,
+            fontSize: 12,
+            fontWeight: 'bold',
+            lineHeight: 20,
+
         },
         style: {
-            backgroundColor: '#F57C00',
-            padding: -10
-        },    
-        // showLabel: false    
-    },    
-    order: [ Home,Trending,Sports, Videos, ],
+            backgroundColor: '#88beae',
+            padding: -10,
+            height: 60,
+
+        },
+        showLabel: true
+    },
+    order: [Home, Trending, Sports, Videos,],
 };
 const Stabs = TabNavigator(routeConfigs2, tabNavigatorConfig);
 
 let routeConfigs3 = {
-    
+
     Home: {
         path: '/',
         screen: Stabs,
     },
-    
-    FullStory:{
+
+    FullStory: {
         screen: FullStory,
-        navigationOptions:{
-            title:'FullStory'
+        navigationOptions: {
+            title: 'FullStory'
         }
     },
-    
+
 };
 let stackNavigatorConfig = {
     headerMode: 'none'
 }
 const Stacks = StackNavigator(routeConfigs3, stackNavigatorConfig);
 let routeConfigs = {
-    
-  
+
+
     Home: {
         path: '/',
         screen: Stacks,
@@ -85,23 +107,23 @@ let routeConfigs = {
     //     path: '/settings',
     //     screen: ContactComponent,
     // },
-   
+
 
 };
-let drawerNavigatorConfig ={
-    initialRouteName : Home,
-    drawerWidth : width / 2,
+let drawerNavigatorConfig = {
+    initialRouteName: Home,
+    drawerWidth: width / 2,
     drawerPosition: 'left',
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',
-    // drawerBackgroundColor: '#ff8000',
-    color:'red',
-    contentOptions:{
+    //drawerBackgroundColor: '#168060',
+    color: 'red',
+    contentOptions: {
         activeTintColor: 'red'
-        
+
     },
     // order: [Home,About,Contact]
 
 };
-export default App = DrawerNavigator(routeConfigs,drawerNavigatorConfig);
+export default App = DrawerNavigator(routeConfigs, drawerNavigatorConfig);
