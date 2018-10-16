@@ -37,7 +37,7 @@ class Sports extends Component {
                     : articles.map((data,index) =>{
                      
                         return( 
-                            <Content style={{backgroundColor: '#fff'}}>
+                            <Content key={index} style={{backgroundColor: '#fff'}}>
 
                             <View key={index} onPress={()=>this.article(data._id)}>
                       

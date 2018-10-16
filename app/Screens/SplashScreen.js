@@ -13,7 +13,7 @@ class SplashScreen extends Component {
     componentDidMount(){
         setTimeout(() => {
             this.props.navigation.navigate('Home'); 
-        }, 2500 ) 
+        },5000 ) 
     }
 
         render(){
@@ -34,10 +34,11 @@ class SplashScreen extends Component {
 const styles = StyleSheet.create({
 
     Container: {
-       // background :'white',
+      
         flex : 1 ,
         alignItems : 'center' ,
         justifyContent : 'center',
+        backgroundColor : '#fff',
 
     }
     , 

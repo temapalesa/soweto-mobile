@@ -9,7 +9,7 @@ import {
      Platform,
      ToolbarAndroid ,
      Dimensions,
-     TouchableOpacity, Divider 
+     TouchableHighlight, Divider 
     } from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../src/actions';
@@ -23,14 +23,8 @@ import Header from '../components/HeaderComponent';
 class Crime extends Component {
     static navigationOptions = ({navigation}) => { 
         let drawerLabel ='Crime' ;
-        let drawerIcon= () => (
-            <Image 
-            source= {require('../Icons/wcmsp-211764.png')}
-            style={{width:50, height:50}}
-            />
-           
-        );
-        return { drawerLabel,drawerIcon};
+        
+        return { drawerLabel};
         
        
     }
@@ -40,37 +34,35 @@ class Crime extends Component {
             <View>
             <Header {...this.props} />
 
-            <ScrollView>
+          <View >
+               <TouchableHighlight style ={{ 
+                width: 125,
+                margin: 6,
+                height: 35,
+                backgroundColor: '#59cbbd',
+                alignSelf: 'center',
+            
+            }}
+            onPress={() =>{
+                const{navigate} = this.props.navigation;
+                navigate('');
 
-                <Tile
-  imageSrc={{uri:'https://www.vocfm.co.za/wp-content/uploads/2016/02/manenberg-police.jpg'}}
-  title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dolore exercitationem"
-  featured
-  caption="Some Caption Text"
-  imageContainerStyle={{marginTop:19, paddingRight:5, paddingLeft:5}}
-/>
-<View
-    style={{ flex: 1, justifyContent: "space-between" }}
-  >
- 
-  <Thumbnail source={{uri:'https://www.vocfm.co.za/wp-content/uploads/2016/02/manenberg-police.jpg'}} style={{marginTop:11}}/>
-  
-    <Text style={{fontSize:17, marginTop:19, marginLeft: 5}}>A React component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.
-This example shows fetching and displaying an image from local storage as well as one from network and even from data provided in the 'data:' uri scheme.</Text>
-   
-  </View>
+            }}>
+            <Text style= {{color:'white', fontSize: 22, alignSelf: 'center',  }}> Crime </Text>
 
-  
-
-
-
-
-            </ScrollView>
-
-
+            </TouchableHighlight>
             </View>
-          
-        )
+    <ScrollView>
+      
+       
+
+</ScrollView>
+
+</View>
+              
+
+
+        )   
     }
 }
 export default Crime;

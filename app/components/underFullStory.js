@@ -49,7 +49,7 @@ class underFullStory extends Component {
                             {!articles.length==0?articles.map((data,index) =>{
                             
                             return( 
-                                <Content  style={{backgroundColor: '#fff'}}>
+                                <Content key={index} style={{backgroundColor: '#fff'}}>
 
                                     <TouchableOpacity key={index} onPress={()=>this.article(data._id)}>
                                         <View>

@@ -10,14 +10,9 @@ import HeaderComponent from './HeaderComponent';
 
 class Polotics extends Component {
     static navigationOptions = ({navigation}) => { 
-        let drawerLabel ='Polotics' ;
-        let drawerIcon= () => (
-            <Image 
-            source= {require('../Icons/83869781-politics-concept-pixelated-blue-ballot-icon-on-digital-background.jpg')}
-            style={{width:40, height:40}}
-            />
-        );
-        return { drawerLabel,drawerIcon};
+        let drawerLabel ='Politics' ;
+     
+        return { drawerLabel};
         
     }
       render() {
@@ -41,7 +36,7 @@ class Polotics extends Component {
                 navigate('');
 
             }}>
-            <Text style= {{color:'white', fontSize: 22, alignSelf: 'center',  }}> Top Stories</Text>
+            <Text style= {{color:'white', fontSize: 22, alignSelf: 'center',  }}> Politics</Text>
 
             </TouchableHighlight>
             </View>

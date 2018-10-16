@@ -5,32 +5,34 @@ import {View,Text,TouchableHighlight,Image} from 'react-native';
 export default class HeaderComponent extends Component{
     render() {
         return(<View style={{
-            marginTop: 15,
+            marginTop: 0,
             height: 90,
             flexDirection: 'row',
             justifyContent: 'flex-start',
             alignItems: 'center',
-            borderBottomColor: '#ff8000',
+            borderBottomColor: '#88beae',
+            borderTopColor: '#88beae',
+            borderTopWidth: 3,
             borderBottomWidth: 3,
             backgroundColor:'white'
 
         }}>
         
         
-        <TouchableHighlight style={{marginLeft:10, marginTop: 20}}
+        <TouchableHighlight style={{marginLeft:10, marginTop: 0}}
         onPress={() => {
             const {navigate} = this.props.navigation;
             navigate('DrawerOpen');
         }}>
        
         <Image
-        style={{width: 32, height:32,}}
-        source={require('../Icons/orangemenu-icon.png')}
+        style={{width: 40, height: 40}}
+        source={require('../Icons/Green-Icon-Menu2.jpg')}
         />
         </TouchableHighlight>
         <View style={{width: 180,
         height: 180,
-        paddingLeft: 90,
+        // paddingLeft: 90,
         //resizeMode:'contain',
          justifyContent:'center',
         //alignSelf:'center',
@@ -38,8 +40,9 @@ export default class HeaderComponent extends Component{
         
     }}>
         <Image 
-        style={{width: 140,
-        height: 140,
+        style={{width: 80,
+        height: 80,
+        paddingLeft: 340,
         resizeMode:'contain',
         // justifyContent:'center',
         //alignSelf:'center',

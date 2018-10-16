@@ -41,14 +41,15 @@ let routeConfigs2 = {
 let tabNavigatorConfig = {    
     tabBarPosition: 'bottom',
     animationEnabled: true,
+    underlineColor: 'RGB(0, 128, 128)',
     swipeEnabled: true,
     tabBarOptions: {
-        activeTintColor: '#FAFAFA',
+        activeTintColor: '#168060',
         labelStyle: {
             fontSize: 13,
         },
         style: {
-            backgroundColor: '#F57C00',
+            backgroundColor: '#88beae',
             padding: -10
         },    
         // showLabel: false    
@@ -61,10 +62,8 @@ const Stabs = TabNavigator(routeConfigs2, tabNavigatorConfig);
 let routeConfigs3 = {
 
     SplashScreen : {
+        
         screen : SplashScreen ,
-        navigationOptions : {
-            title : 'Splash'
-        }
     }
     ,
     Home: {
@@ -88,7 +87,6 @@ let routeConfigs = {
     
   
     Home: {
-        path: '/',
         screen: Stacks,
     },
 
@@ -124,7 +122,7 @@ let drawerNavigatorConfig ={
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',
-    // drawerBackgroundColor: '#ff8000',
+    drawerBackgroundColor: '#E0F8F7',
     color:'red',
     contentOptions:{
         activeTintColor: 'red'
