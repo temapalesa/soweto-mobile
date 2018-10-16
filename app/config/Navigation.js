@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-import { AppRegistry, Dimensions } from 'react-native';
-import { DrawerNavigator, TabNavigator, StackNavigator, createBottomTabNavigation, TabBarBottom } from 'react-navigation'
-=======
 
 import { Dimensions } from 'react-native';
 import {DrawerNavigator, TabNavigator,StackNavigator} from 'react-navigation';
->>>>>>> c1f07f16fe22673109258857e014a3e691be8287
 import {
     Platform,
     StyleSheet,
@@ -24,15 +18,12 @@ import SplashScreen  from '../Screens/SplashScreen';
 import PoloticsComp from '../components/PoloticsComponent';
 import LifestyleComponent from '../components/LifeStyle'
 
-<<<<<<< HEAD
-import { Home, Trending, Sports, Videos, About, Contact } from '../../screenNames';
+// // import { Home, Trending, Sports, Videos, About, Contact } from '../../screenNames';
 
-var { height, width } = Dimensions.get('window');
-=======
+// var { height, width } = Dimensions.get('window');
 import { Home,Trending,Sports,Videos, About,Polotics,Lifestyle} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
 
->>>>>>> c1f07f16fe22673109258857e014a3e691be8287
 let routeConfigs2 = {
 
     Home: {
@@ -91,8 +82,6 @@ const Stabs = TabNavigator(routeConfigs2, tabNavigatorConfig);
 
 let routeConfigs3 = {
 
-<<<<<<< HEAD
-=======
     SplashScreen : {
         screen : SplashScreen ,
         navigationOptions : {
@@ -100,7 +89,6 @@ let routeConfigs3 = {
         }
     }
     ,
->>>>>>> c1f07f16fe22673109258857e014a3e691be8287
     Home: {
         path: '/',
         screen: Stabs,
@@ -126,17 +114,6 @@ let routeConfigs = {
         screen: Stacks,
     },
 
-<<<<<<< HEAD
-    // About: {
-    //     path: '/info',
-    //     screen: AboutComponent,
-    // },
-    // Contact: {
-    //     path: '/settings',
-    //     screen: ContactComponent,
-    // },
-
-=======
     About: {
         path: '/info',
         screen: AboutComponent,
@@ -150,7 +127,6 @@ let routeConfigs = {
         screen: LifestyleComponent,
     },
    
->>>>>>> c1f07f16fe22673109258857e014a3e691be8287
 
 };
 let drawerNavigatorConfig = {
