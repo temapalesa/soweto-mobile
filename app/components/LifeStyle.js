@@ -10,14 +10,14 @@ import HeaderComponent from './HeaderComponent';
 
 class LifeStyleComponent extends Component {
     static navigationOptions = ({navigation}) => { 
-        let drawerLabel ='LifeStyle' ;
-        let drawerIcon= () => (
+        let drawerLabel ='Life Style' ;
+       /* let drawerIcon= () => (
             <Image 
-            source= {require('../Icons/vote-orange.webp')}
-            style={{width:36, height:36}}
+            source= {require('../Icons/cticon-weightloss.png')}
+            style={{width:40, height:40}}
             />
-        );
-        return { drawerLabel,drawerIcon};
+        );*/
+        return { drawerLabel};
         
     }
       render() {

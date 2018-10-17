@@ -13,9 +13,10 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../src/actions';
+// import { CardItem,  Left, Body, Right, Thumbnail, Content, Icon, Button} from 'native-base';
 import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Icon, Button } from 'native-base';
 import { StatusBar } from 'react-native';
-import { ListItem } from 'react-native-elements';
+// import { ListItem,Card } from 'react-native-elements';
 import Header from '../components/HeaderComponent';
 import { TabNavigator } from 'react-navigation';
 
@@ -53,23 +54,24 @@ class Home extends Component {
                         {!articles.length == 0 ? articles.map((data, index) => {
 
                             return (
-                                <Content style={{ backgroundColor: '#fff' }}>
+                                <Content key={index} style={{ backgroundColor: '#fff' }}>
 
-                                    <TouchableOpacity key={index} onPress={() => this.article(data._id)}>
+                                    <TouchableOpacity  key={index} onPress={() => this.article(data._id)}>
                                         <View >
 
                                             <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }} >
 
                                                 <CardItem >
+
+                                                    <Body>
+
+                                                        <Thumbnail square source={{ uri: data.picture }} style={{ height: 150, width: 350, marginLeft: 1, marginRight: 2 }} />
+
+                                                        <Text style={{ fontFamily: "SEGIO UI", paddingTop: 20, justifyContent: 'center', color: 'black', marginLeft: 25, fontSize: 18 }} >{data.title} </Text>
+
+
+                                                    </Body>
                                                  
-                                                        <Body>
-                                                            
-                                                            <Thumbnail square source={{uri: data.picture}} style={{height: 150, width: 350, marginLeft:1, marginRight:2 }}/>
-                                        
-                                                            <Text style={{fontFamily:"SEGIO UI", paddingTop:20,justifyContent:'center',color:'black', marginLeft:25, fontSize:18 }} >{data.title} </Text>
-                                                          
-                                                          
-                                                        </Body>      
                                                 </CardItem>
                                             </Card>
 

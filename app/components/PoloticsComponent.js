@@ -10,14 +10,9 @@ import HeaderComponent from './HeaderComponent';
 
 class Polotics extends Component {
     static navigationOptions = ({navigation}) => { 
-        let drawerLabel ='Polotics' ;
-        let drawerIcon= () => (
-            <Image 
-            source= {require('../Icons/vote-orange.webp')}
-            style={{width:36, height:36}}
-            />
-        );
-        return { drawerLabel,drawerIcon};
+        let drawerLabel ='Politics' ;
+     
+        return { drawerLabel};
         
     }
       render() {
@@ -41,7 +36,7 @@ class Polotics extends Component {
                 navigate('');
 
             }}>
-            <Text style= {{color:'white', fontSize: 22, alignSelf: 'center',  }}> Top Stories</Text>
+            <Text style= {{color:'white', fontSize: 22, alignSelf: 'center',  }}> Politics</Text>
 
             </TouchableHighlight>
             </View>

@@ -34,7 +34,7 @@ class Sports extends Component {
 
         <ScrollView>
             <Container>
-        <Card style={{color: 'black', marginTop:10, }}>
+        <Card style={{ marginTop:10, }}>
             <Image source={{uri: article.picture}}  style={{height:250, width:400,  marginRight:20, marginTop:15 }}/>
             <Text style={{textAlign:'center', marginTop: 15, color: 'black', fontSize:18}}>{article.title}</Text>
             <HTML html={article.body} style={{marginLeft:'auto', marginRight: 'auto'}}/>

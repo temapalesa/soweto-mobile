@@ -57,7 +57,7 @@ class Videos extends Component{
                     <Card      style = {{width : 400, height : 280}}>
                             <WebView
                             style = {{width : 400, height : 250}}
-                                source={{uri:'https://youtu.be/eLPrJ77X_Vk'}}
+                                source={{uri:'https://www.youtube.com/embed/XHV9V1LTnvM'}}
                                 domStorageEnabled={true}
                                mediaPlaybackRequiresUserAction={true}
                                 scalesPageToFit={true}
