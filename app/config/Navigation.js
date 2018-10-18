@@ -20,6 +20,7 @@ import LifestyleComponent from '../components/LifeStyle'
 import Entertainment from '../components/Entertainment';
 import Crime from '../components/Crime'
 
+
 import { Home,Trending,Sports,Videos, About,Polotics,Lifestyle,Enter, Crim} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
 
@@ -77,6 +78,7 @@ let routeConfigs3 = {
             title:'FullStory'
         }
     },
+    
     
 };
 let stackNavigatorConfig = {

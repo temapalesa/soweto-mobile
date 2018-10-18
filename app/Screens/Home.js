@@ -14,7 +14,7 @@ import {
 import { connect } from 'react-redux';
 import * as actions from '../src/actions';
 // import { CardItem,  Left, Body, Right, Thumbnail, Content, Icon, Button} from 'native-base';
-import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Icon, Button } from 'native-base';
+import { CardItem,Card, Left, Body, Right, Thumbnail, Content, Icon, Button } from 'native-base';
 import { StatusBar } from 'react-native';
 // import { ListItem,Card } from 'react-native-elements';
 import Header from '../components/HeaderComponent';
@@ -59,21 +59,22 @@ class Home extends Component {
                                     <TouchableOpacity  key={index} onPress={() => this.article(data._id)}>
                                         <View >
 
-                                            <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }} >
-
-                                                <CardItem >
+                                            
+                                            <CardItem style={{margin:7, borderBottomColor:'#ff8000',borderBottomWidth:1,}}>
+                                            <Left>
 
                                                     <Body>
 
-                                                        <Thumbnail square source={{ uri: data.picture }} style={{ height: 150, width: 350, marginLeft: 1, marginRight: 2 }} />
+                                                        <Image source={{ uri: data.picture }} style={{height: 35,width:75}} />
 
-                                                        <Text style={{ fontFamily: "SEGIO UI", paddingTop: 20, justifyContent: 'center', color: 'black', marginLeft: 25, fontSize: 18 }} >{data.title} </Text>
+                                                        <Text style={{color:'black' ,fontStyle:'italic',fontFamily: "vincHand",}} >{data.title} </Text>
 
 
                                                     </Body>
+                                                    </Left>
                                                  
                                                 </CardItem>
-                                            </Card>
+                                            
 
 
                                         </View>
