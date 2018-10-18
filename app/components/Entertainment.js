@@ -22,9 +22,9 @@ class Entertainment extends Component {
     static navigationOptions = ({navigation}) => { 
         let drawerLabel ='Entertainment ' ;
         /*let drawerIcon= () => (
-            <Image 
-            source= {require('../Icons/entertainment-icon-large.png')}
-            style={{width:40, height:40}}
+            <Icon 
+            name="" size={25}
+            style={{marginHorizontal:10, borderColor:"white"}}
             />
         );*/
         return { drawerLabel};

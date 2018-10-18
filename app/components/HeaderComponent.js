@@ -6,15 +6,16 @@ export default class HeaderComponent extends Component{
     render() {
         return(<View style={{
             marginTop: 0,
-            height: 90,
+            height: 40,
             flexDirection: 'row',
             justifyContent: 'flex-start',
             alignItems: 'center',
-            borderBottomColor: '#88beae',
-            borderTopColor: '#88beae',
+            borderBottomColor: '#0091EA',
+            borderTopColor:'#0091EA',
             borderTopWidth: 3,
             borderBottomWidth: 3,
-            backgroundColor:'white'
+            backgroundColor:'#0091EA',
+            
 
         }}>
         
@@ -26,8 +27,8 @@ export default class HeaderComponent extends Component{
         }}>
        
         <Image
-        style={{width: 40, height: 40}}
-        source={require('../Icons/Green-Icon-Menu2.jpg')}
+        style={{width: 30, height: 30}}
+        source={require('../Icons/images (1).png')}
         />
         </TouchableHighlight>
         <View style={{width: 180,
@@ -40,9 +41,9 @@ export default class HeaderComponent extends Component{
         
     }}>
         <Image 
-        style={{width: 80,
-        height: 80,
-        paddingLeft: 340,
+        style={{width: 50,
+        height: 50,
+        paddingLeft: 530,
         resizeMode:'contain',
         // justifyContent:'center',
         //alignSelf:'center',

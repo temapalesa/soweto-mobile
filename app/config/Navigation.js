@@ -1,6 +1,6 @@
 
 import { Dimensions } from 'react-native';
-import {DrawerNavigator, TabNavigator,StackNavigator} from 'react-navigation';
+import {DrawerNavigator, TabNavigator,StackNavigator, DrawerItems} from 'react-navigation';
 import {
   Platform,
   StyleSheet,
@@ -38,18 +38,21 @@ let routeConfigs2 = {
         screen: VideoScreen,
     },
 };
+
+
 let tabNavigatorConfig = {    
     tabBarPosition: 'bottom',
     animationEnabled: true,
-    underlineColor: 'RGB(0, 128, 128)',
+   // underlineColor: 'RGB(0, 128, 128)',
     swipeEnabled: true,
     tabBarOptions: {
-        activeTintColor: '#168060',
+        activeTintColor: '#FAFAFA',
         labelStyle: {
-            fontSize: 13,
+            fontSize: 12,
         },
         style: {
-            backgroundColor: '#88beae',
+            backgroundColor: '#039BE5',
+            height: 40,
             padding: -10
         },    
         // showLabel: false    
@@ -93,7 +96,6 @@ let routeConfigs = {
     About: {
         path: '/info',
         screen: AboutComponent,
-
     },
     Polotics: {
         path: '/Polotics',
@@ -122,7 +124,7 @@ let drawerNavigatorConfig ={
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',
-    drawerBackgroundColor: '#E0F8F7',
+    drawerBackgroundColor: '#607D8B',
     color:'red',
     contentOptions:{
         activeTintColor: 'red'

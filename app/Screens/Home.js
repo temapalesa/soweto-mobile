@@ -13,10 +13,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../src/actions';
-// import { CardItem,  Left, Body, Right, Thumbnail, Content, Icon, Button} from 'native-base';
 import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Icon, Button } from 'native-base';
-import { StatusBar } from 'react-native';
-// import { ListItem,Card } from 'react-native-elements';
 import Header from '../components/HeaderComponent';
 import { TabNavigator } from 'react-navigation';
 
@@ -36,21 +33,23 @@ class Home extends Component {
     article(id) {
         this.props.fetchArticle(id);
         this.props.navigation.navigate('FullStory');
+       
     }
 
     render() {
         const animating = this.state.animating;
 
         const { articles } = this.props;
-        // console.log(this.article);
+      
         return (
+           
             <View>
                 
                 <Header {...this.props} />
 
                     <ScrollView >
 
-
+                      
                         {!articles.length == 0 ? articles.map((data, index) => {
 
                             return (
