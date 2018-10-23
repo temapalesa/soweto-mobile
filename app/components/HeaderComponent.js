@@ -44,8 +44,11 @@ export default class HeaderComponent extends Component{
         source={require('../Icons/orangemenu-icon.png')}
         />
         </TouchableHighlight>
+        
          </View>
+         
         </View>
+        
         
     );
     }
