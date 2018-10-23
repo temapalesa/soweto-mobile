@@ -1,6 +1,6 @@
 
 import { Dimensions } from 'react-native';
-import {DrawerNavigator, TabNavigator,StackNavigator, DrawerItems} from 'react-navigation';
+import {DrawerNavigator, TabNavigator,StackNavigator, } from 'react-navigation';
 import {
   Platform,
   StyleSheet,
@@ -19,6 +19,7 @@ import PoloticsComp from '../components/PoloticsComponent';
 import LifestyleComponent from '../components/LifeStyle'
 import Entertainment from '../components/Entertainment';
 import Crime from '../components/Crime'
+
 
 import { Home,Trending,Sports,Videos, About,Polotics,Lifestyle,Enter, Crim} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
@@ -43,7 +44,7 @@ let routeConfigs2 = {
 let tabNavigatorConfig = {    
     tabBarPosition: 'bottom',
     animationEnabled: true,
-   // underlineColor: 'RGB(0, 128, 128)',
+    underlineColor: 'RGB(0, 128, 128)',
     swipeEnabled: true,
     tabBarOptions: {
         activeTintColor: '#FAFAFA',
@@ -51,7 +52,7 @@ let tabNavigatorConfig = {
             fontSize: 12,
         },
         style: {
-            backgroundColor: '#039BE5',
+            backgroundColor: '#88beae',
             height: 40,
             padding: -10
         },    
@@ -80,6 +81,7 @@ let routeConfigs3 = {
             title:'FullStory'
         }
     },
+    
     
 };
 let stackNavigatorConfig = {
