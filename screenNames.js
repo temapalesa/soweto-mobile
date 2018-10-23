@@ -4,9 +4,9 @@ const Sports = "Sports";
 const Videos = "Videos";
 const Lifestyle = "Lifestyle";
 const About = "About";
-const Polotics= "Polotics";
+const Politics= "Politics";
 const Enter = "Enter";
 const Crim = "Crim"
 
 
-export { Home,Trending,Sports,Videos,Lifestyle,About,Polotics,Enter, Crim} ;
+export { Home,Trending,Sports,Videos,Lifestyle,About,Politics,Enter, Crim} ;

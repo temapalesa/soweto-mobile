@@ -21,7 +21,7 @@ import Entertainment from '../components/Entertainment';
 import Crime from '../components/Crime'
 
 
-import { Home,Trending,Sports,Videos, About,Polotics,Lifestyle,Enter, Crim} from '../../screenNames';
+import { Home,Trending,Sports,Videos, About,Politics,Lifestyle,Enter, Crim} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
 
 let routeConfigs2 = {
@@ -99,7 +99,7 @@ let routeConfigs = {
         path: '/info',
         screen: AboutComponent,
     },
-    Polotics: {
+    Politics: {
         path: '/Polotics',
         screen: PoloticsComp,
     },
@@ -132,7 +132,7 @@ let drawerNavigatorConfig ={
         activeTintColor: 'red'
         
     },
-    order: [Home,About,Polotics,Lifestyle,Enter,Crim]
+    order: [Home,About,Politics,Lifestyle,Enter,Crim]
 
 };
 export default App = DrawerNavigator(routeConfigs,drawerNavigatorConfig);
