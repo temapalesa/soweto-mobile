@@ -52,7 +52,7 @@ let tabNavigatorConfig = {
             fontSize: 12,
         },
         style: {
-            backgroundColor: '#88beae',
+            backgroundColor: '#ff8000',
             height: 40,
             padding: -10
         },    
@@ -122,7 +122,7 @@ let routeConfigs = {
 let drawerNavigatorConfig ={
     initialRouteName : Home,
     drawerWidth : width / 2,
-    drawerPosition: 'left',
+    drawerPosition: 'right',
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',

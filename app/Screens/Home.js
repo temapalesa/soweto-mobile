@@ -51,8 +51,6 @@ class Home extends Component {
                 <Header transparent {...this.props} />
 
                     <ScrollView >
-
-                        <Text children="In Case You Missed It" style={{ fontSize: 22, color: '#fff', backgroundColor: '#88beae', textAlign: 'center', marginBottom: 2, marginTop: 7, borderBottomWidth: 3, borderBottomColor: '#88beae', marginTop:8, }}></Text>
                  
                         {!articles.length == 0 ? articles.map((data, index) => {
 
