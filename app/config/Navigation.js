@@ -1,6 +1,6 @@
 
 import { Dimensions } from 'react-native';
-import {DrawerNavigator, TabNavigator,StackNavigator} from 'react-navigation';
+import {DrawerNavigator, TabNavigator,StackNavigator, } from 'react-navigation';
 import {
   Platform,
   StyleSheet,
@@ -20,7 +20,8 @@ import LifestyleComponent from '../components/LifeStyle'
 import Entertainment from '../components/Entertainment';
 import Crime from '../components/Crime'
 
-import { Home,Trending,Sports,Videos, About,Polotics,Lifestyle,Enter, Crim} from '../../screenNames';
+
+import { Home,Trending,Sports,Videos, About,Politics,Lifestyle,Enter, Crim} from '../../screenNames';
 var {height,width} = Dimensions.get('window');
 
 let routeConfigs2 = {
@@ -38,18 +39,21 @@ let routeConfigs2 = {
         screen: VideoScreen,
     },
 };
+
+
 let tabNavigatorConfig = {    
     tabBarPosition: 'bottom',
     animationEnabled: true,
     underlineColor: 'RGB(0, 128, 128)',
     swipeEnabled: true,
     tabBarOptions: {
-        activeTintColor: '#168060',
+        activeTintColor: '#FAFAFA',
         labelStyle: {
-            fontSize: 13,
+            fontSize: 12,
         },
         style: {
-            backgroundColor: '#88beae',
+            backgroundColor: '#ff8000',
+            height: 40,
             padding: -10
         },    
         // showLabel: false    
@@ -78,6 +82,7 @@ let routeConfigs3 = {
         }
     },
     
+    
 };
 let stackNavigatorConfig = {
     headerMode: 'none'
@@ -93,9 +98,8 @@ let routeConfigs = {
     About: {
         path: '/info',
         screen: AboutComponent,
-
     },
-    Polotics: {
+    Politics: {
         path: '/Polotics',
         screen: PoloticsComp,
     },
@@ -118,17 +122,17 @@ let routeConfigs = {
 let drawerNavigatorConfig ={
     initialRouteName : Home,
     drawerWidth : width / 2,
-    drawerPosition: 'left',
+    drawerPosition: 'right',
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',
-    drawerBackgroundColor: '#E0F8F7',
+    drawerBackgroundColor: '#607D8B',
     color:'red',
     contentOptions:{
         activeTintColor: 'red'
         
     },
-    order: [Home,About,Polotics,Lifestyle,Enter,Crim]
+    order: [Home,About,Politics,Lifestyle,Enter,Crim]
 
 };
 export default App = DrawerNavigator(routeConfigs,drawerNavigatorConfig);

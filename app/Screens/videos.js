@@ -10,7 +10,6 @@ import {
 import {WebView} from 'react-native';
 import { Container, Content, CardItem ,Card } from 'native-base';
 import HeaderComponent from '../components/HeaderComponent';
-import Moment from 'react-moment';
 
 
 class Videos extends Component{
@@ -52,7 +51,6 @@ class Videos extends Component{
         </View>
         
                 <Content>
-                <Text><Moment date={dateToFormat} /></Text>
                 
                     <Card      style = {{width : 400, height : 280}}>
                             <WebView

@@ -14,7 +14,7 @@ import {
 import { connect } from 'react-redux';
 import * as actions from '../src/actions';
 // import { CardItem,  Left, Body, Right, Thumbnail, Content, Icon, Button} from 'native-base';
-import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Icon, Button } from 'native-base';
+import { CardItem,Card, Left, Body, Right, Thumbnail, Content, Icon, Button, Container } from 'native-base';
 import { StatusBar } from 'react-native';
 // import { ListItem,Card } from 'react-native-elements';
 import Header from '../components/HeaderComponent';
@@ -36,21 +36,22 @@ class Home extends Component {
     article(id) {
         this.props.fetchArticle(id);
         this.props.navigation.navigate('FullStory');
+       
     }
 
     render() {
         const animating = this.state.animating;
 
         const { articles } = this.props;
-        // console.log(this.article);
+      
         return (
-            <View>
+           
+            <View style={{backgroundColor:'white'}}>
                 
-                <Header {...this.props} />
+                <Header transparent {...this.props} />
 
                     <ScrollView >
-
-
+                 
                         {!articles.length == 0 ? articles.map((data, index) => {
 
                             return (
@@ -59,21 +60,19 @@ class Home extends Component {
                                     <TouchableOpacity  key={index} onPress={() => this.article(data._id)}>
                                         <View >
 
-                                            <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }} >
-
-                                                <CardItem >
-
-                                                    <Body>
-
-                                                        <Thumbnail square source={{ uri: data.picture }} style={{ height: 150, width: 350, marginLeft: 1, marginRight: 2 }} />
-
-                                                        <Text style={{ fontFamily: "SEGIO UI", paddingTop: 20, justifyContent: 'center', color: 'black', marginLeft: 25, fontSize: 18 }} >{data.title} </Text>
-
-
-                                                    </Body>
+                                            <CardItem style={{ marginTop:8, borderBottomColor:'#009688',borderBottomWidth:1}}>
+                                            <Left>
+                                                
+                                                        <Image source={{uri: data.picture}} style={{height: 35,width:75}} />
+                                                      
+                                                         </Left>
+                                                    <Right>
+                                                        <Text style={{color:'black' ,fontStyle:'italic',fontFamily: "vincHand",}} >{data.title} </Text>
+                                                        </Right>
+                                                    
                                                  
                                                 </CardItem>
-                                            </Card>
+                                             
 
 
                                         </View>
