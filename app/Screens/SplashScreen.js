@@ -21,8 +21,8 @@ class SplashScreen extends Component {
                 <View style={styles.Container}>
                     <View>
                     <Image
-                     style={{width: 350, height:150,}}
-                     source={require('../Images/download.png')}
+                     style={{width: 350, height:150,resizeMode:"contain"}}
+                     source={require('../Icons/SSS.png')}
                      />
                     </View>
                 </View>

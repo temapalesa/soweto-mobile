@@ -9,7 +9,8 @@ import {
     Platform,
     ToolbarAndroid,
     Dimensions,
-    TouchableOpacity
+    TouchableOpacity,
+    TouchableHighlight
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../src/actions';
@@ -49,18 +50,159 @@ class Home extends Component {
             <View style={{backgroundColor:'white'}}>
                 
                 <Header transparent {...this.props} />
+                <View >
+               <TouchableHighlight style ={{ 
+                width: 125,
+                margin: 6,
+                height: 30,
+                backgroundColor: '#59cbbd',
+                alignSelf: 'center',
+            
+            }}
+            onPress={() =>{
+                const{navigate} = this.props.navigation;
+                navigate('');
 
+            }}>
+            <Text style= {{color:'white', fontSize: 22, alignSelf: 'center',  }}> Top Stories</Text>
+
+            </TouchableHighlight>
+            </View>
+            <ScrollView horizontal={true}> 
+       
+       <Card style={{borderBottomColor: '#009688',borderBottomWidth:1,width:Dimensions.get('window').width}}>
+           <CardItem>
+             <Body>
+               <TouchableOpacity onPress={() =>{
+                   const{navigate} = this.props.navigation;
+                   navigate('mortality');
+               }}>
+                 <Image source={require('../Images/WhatsApp-Image-2017-04-11-at-11.22.57.jpeg')}
+                 style={{height: 250,width:Dimensions.get('window').width,flex:0}}/>
+                 <Text style={{fontStyle:'normal',color:'black' , fontSize: 19,fontFamily: "vincHand",}}>
+                 Suspected ritual killing cause a stir in Orlando East
+                 </Text>
+               </TouchableOpacity>
+               <Button transparent>
+                 <Icon active name="thumbs-up" />
+                 <Text>  12 Likes  </Text>
+               
+                 <Icon active name="chatbubbles" /> 
+                 <Text>  4 Comments </Text>
+                 <Right>
+               <Text>just now</Text>
+             </Right>
+               </Button>
+               
+             </Body>
+             
+           </CardItem>
+           </Card>
+
+           <Card style={{borderBottomColor: '#009688',borderBottomWidth:1,width:Dimensions.get('window').width}}>
+           <CardItem>
+             <Body>
+             <TouchableOpacity onPress={() =>{
+                   const{navigate} = this.props.navigation;
+                   navigate('Baxter');
+             }}>
+               <Image source={require('../Images/0ac2a23587844c90bf0e6b286edaf23f.jpg')}
+                style={{height: 250,width:Dimensions.get('window').width,flex:0}}/>
+               <Text style={{fontStyle:'normal',color:'black',fontSize: 19,fontFamily: "vincHand",}}>
+               Staurt Baxter back to Kaizer Chiefs Again
+               </Text>
+               </TouchableOpacity>
+               <Button transparent>
+                 <Icon active name="thumbs-up" />
+                 <Text> 12 Likes </Text>
+               
+                 <Icon active name="chatbubbles" />
+                 <Text> 4 Comments </Text>
+                 <Right>
+               <Text>2m ago</Text>
+             </Right>
+               </Button>
+             </Body>
+             
+           </CardItem>
+           </Card>
+           <Card style={{borderBottomColor: '#009688',borderBottomWidth:1,width:Dimensions.get('window').width}}>
+           <CardItem>
+             <Body>
+               <Image source={require('../Images/job.jpg')}
+                style={{height: 250,width:Dimensions.get('window').width,flex:0}}/>
+               <Text style={{fontStyle:'normal',color:'black',fontSize: 19,fontFamily: "vincHand",}}>
+               New premier of the North West Province
+               </Text>
+               <Button transparent>
+                 <Icon active name="thumbs-up" />
+                 <Text> 12 Likes </Text>
+               
+                 <Icon active name="chatbubbles" />
+                 <Text> 4 Comments </Text>
+                 <Right>
+               <Text>3m ago</Text>
+             </Right>
+               </Button>
+             </Body>
+           </CardItem>
+           </Card>
+           <Card style={{borderBottomColor: '#009688',borderBottomWidth:1,width:Dimensions.get('window').width}}>
+           <CardItem>
+             <Body>
+               <Image source={require('../Images/unnamed.jpg')}
+                style={{height: 250,width:Dimensions.get('window').width,flex:0}}/>
+               <Text style={{fontStyle:'normal', color:'black',fontSize: 19,fontFamily: "vincHand",}}>
+               Eskom workers refuses 4.7% salary increase
+               </Text>
+               <Button transparent>
+                 <Icon active name="thumbs-up" />
+                 <Text> 12 Likes </Text>
+               
+                 <Icon active name="chatbubbles" />
+                 <Text> 4 Comments </Text>
+                 <Right>
+               <Text>4m ago</Text>
+             </Right>
+               </Button>
+             </Body>
+           </CardItem>
+           </Card>
+           <Card style={{borderBottomColor: '#ff8000',borderBottomWidth:1,width:Dimensions.get('window').width}}>
+           <CardItem>
+             <Body>
+               <Image source={require('../Images/DgSlrQ3WkAAH9A_.jpg')}
+                style={{height: 250,width:Dimensions.get('window').width,flex:0}}/>
+               <Text style={{fontStyle:'normal', color:'black',fontSize: 19,fontFamily: "vincHand",}}>
+               Kaizer Chiefs have signed Khama Billiat!
+               </Text>
+               <Button transparent>
+                 <Icon active name="thumbs-up" />
+                 <Text>12 Likes</Text>
+                 <Icon active name="chatbubbles" />
+                 <Text>4 Comments</Text>
+               </Button>
+             </Body>
+           </CardItem>
+           </Card>
+
+         
+       </ScrollView>
                     <ScrollView >
+               
+
+               
                  
                         {!articles.length == 0 ? articles.map((data, index) => {
 
                             return (
                                 <Content key={index} style={{ backgroundColor: '#fff' }}>
+                                
 
                                     <TouchableOpacity  key={index} onPress={() => this.article(data._id)}>
                                         <View >
 
-                                            <CardItem style={{ marginTop:8, borderBottomColor:'#009688',borderBottomWidth:1}}>
+                                            <CardItem >
                                             <Left>
                                                 
                                                         <Image source={{uri: data.picture}} style={{height: 35,width:75}} />
@@ -72,6 +214,8 @@ class Home extends Component {
                                                     
                                                  
                                                 </CardItem>
+                                                <View style={{borderWidth:1,borderColor:'#009688'}}>
+                                                    </View>
                                              
 
 
