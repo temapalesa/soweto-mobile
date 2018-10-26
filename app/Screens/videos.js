@@ -11,6 +11,8 @@ import {WebView} from 'react-native';
 import { Container, Content, CardItem ,Card } from 'native-base';
 import HeaderComponent from '../components/HeaderComponent';
 
+const moment = require('moment');
+
 
 class Videos extends Component{
 
@@ -105,7 +107,7 @@ class Videos extends Component{
                     </Card>
                     <Card>
                         <CardItem>
-                        
+                            <Text>{moment().startOf('day').fromNow()}</Text>
                         </CardItem>
                         </Card>
                 </Content>
