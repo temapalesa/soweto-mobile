@@ -1,13 +1,6 @@
 
 import { Dimensions } from 'react-native';
 import {DrawerNavigator, TabNavigator,StackNavigator, } from 'react-navigation';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
 import  HomeScreen from '../Screens/Home';
 import NewsScreen from '../Screens/News';
 import VideoScreen from '../Screens/videos';
@@ -47,12 +40,12 @@ let tabNavigatorConfig = {
     underlineColor: 'RGB(0, 128, 128)',
     swipeEnabled: true,
     tabBarOptions: {
-        activeTintColor: '#FAFAFA',
+        activeTintColor: '#ffff',
         labelStyle: {
             fontSize: 12,
         },
         style: {
-            backgroundColor: '#ff8000',
+            backgroundColor: '#1976d2',
             height: 40,
             padding: -10
         },    

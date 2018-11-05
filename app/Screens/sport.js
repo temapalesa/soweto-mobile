@@ -15,7 +15,7 @@ import * as actions from '../src/actions';
 import { CardItem, Card, Left, Body, Right, Thumbnail, Content, DeckSwiper } from 'native-base';
 import { StatusBar } from 'react-native';
 import Header from '../components/HeaderComponent';
-import Slide from '../components/Slider'
+
 
 
 class Sports extends Component {
@@ -32,15 +32,16 @@ class Sports extends Component {
         return (
             <View>
 
-                <Header {...this.props} />
+                <Header />
 
 
                 <ScrollView >
-                    <Text children="In Case You Missed It" style={{ fontSize: 22, color: '#fff', backgroundColor: '#88beae', textAlign: 'center', marginBottom: 2, marginTop: 7, borderBottomWidth: 3, borderBottomColor: '#88beae' }}></Text>
-                    <Slide />
+                   
                     {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
                         : articles.map((data, index) => {
 
+                        if(data.category.name == "sport"){
+                                
                             return (
 
                                 <Content key={index} style={{ backgroundColor: '#fff' }}>
@@ -70,6 +71,8 @@ class Sports extends Component {
                                 </Content>
 
                             )
+                            }
+
                         })
                     }
 

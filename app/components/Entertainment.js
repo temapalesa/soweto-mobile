@@ -21,12 +21,7 @@ import Header from '../components/HeaderComponent';
 class Entertainment extends Component {
     static navigationOptions = ({navigation}) => { 
         let drawerLabel ='Entertainment ' ;
-        /*let drawerIcon= () => (
-            <Icon 
-            name="" size={25}
-            style={{marginHorizontal:10, borderColor:"white"}}
-            />
-        );*/
+        
         return { drawerLabel};
      
        
