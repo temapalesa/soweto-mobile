@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 import {StyleSheet , Text , View , Image } from  'react-native';
+import {YellowBox} from 'react-native';
+
+YellowBox.ignoreWarnings(['Warning: ...']);
+console.warn();
+console.disableYellowBox = true ;
 
 class SplashScreen extends Component {
 
@@ -22,7 +27,7 @@ class SplashScreen extends Component {
                     <View>
                     <Image
                      style={{width: 350, height:150,resizeMode:"contain"}}
-                     source={require('../Icons/SSS.png')}
+                     source={require('../Images/sowetoLogo.jpg')}
                      />
                     </View>
                 </View>
@@ -38,7 +43,7 @@ const styles = StyleSheet.create({
         flex : 1 ,
         alignItems : 'center' ,
         justifyContent : 'center',
-        backgroundColor : '#fff',
+        backgroundColor : '#007ac1',      
 
     }
     , 
