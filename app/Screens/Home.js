@@ -15,7 +15,8 @@ import { connect } from 'react-redux';
 import * as actions from '../src/actions';
 import { CardItem, Left, Body, Right, Thumbnail, Content, Icon, Button, Container } from 'native-base';
 import Header from '../components/HeaderComponent';
-import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
+import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards';
+import Moment from  'moment';
 
 
 const Windowwidth = Dimensions.get('window');
@@ -63,9 +64,10 @@ class Home extends Component {
                                                 <Divider style={styles.DividerLine}/>
                                          
                                                 <Text style={styles.cardText} >{data.title} </Text>
+                                           
                                         </Card>
                                     
-                                        <Divider style={color='2196f3'}/>
+                                        <Divider style={color="#bc2b78"}/>
                                        
 
 
@@ -113,19 +115,19 @@ const styles = StyleSheet.create({
     },
 CardDirection:{
     flexDirection: 'row',
-    marginTop:7,
-  
+    marginTop : 7 ,
 },
 cardText:{
-    //color: '#80d8ff',
+     color: 'black',
      fontStyle: 'italic', 
      fontFamily: "vincHand" ,
-     alignSelf:'center',
-     fontWeight : "bold" ,
+     //alignSelf:'center',
+     //fontWeight : "bold" ,
      flexWrap : 'wrap',
      flexDirection : 'row', 
      width : 290 ,
      padding : 5 ,
+    // marginBottom :10 ,
      
      
 },
