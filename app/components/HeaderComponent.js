@@ -40,7 +40,7 @@ export default class HeaderComponent extends Component{
        
         <Image
         style={{width: 32, height:32}}
-        source={require('../icons/menu.png')}
+      //  source={require('../icons/menu.png')}
         />
         </TouchableHighlight>
         

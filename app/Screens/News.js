@@ -25,7 +25,7 @@ article(id){
         return (
 
           <View> 
-                 <Header {...this.props} />
+                 <Header />
              
           <ScrollView >
 

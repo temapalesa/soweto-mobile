@@ -119,10 +119,10 @@ let drawerNavigatorConfig ={
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
     drawerToggleRoute: 'DrawerToggle',
-    drawerBackgroundColor: '#607D8B',
-    color:'red',
+    drawerBackgroundColor: '#EEEEEE',
+    color:'#007ac1',
     contentOptions:{
-        activeTintColor: 'red'
+        activeTintColor: '#007ac1'
         
     },
     order: [Home,About,Politics,Lifestyle,Enter,Crim]
