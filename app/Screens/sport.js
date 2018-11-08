@@ -24,7 +24,7 @@ class Sports extends Component {
     }
     viewArticle(id) {
         this.props.fetchArticle(id)
-    }
+    }    
     render() {
 
         const { articles } = this.props;
@@ -40,14 +40,14 @@ class Sports extends Component {
                     {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
                         : articles.map((data, index) => {
 
-                        if(data.category.name == "sport"){
+                        if(data.category.name == "Sport"){
                                 
                             return (
 
                                 <Content key={index} style={{ backgroundColor: '#fff' }}>
 
                                     <View key={index} onPress={() => this.article(data._id)}>
-
+                                        
 
                                         <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }} onPress={() => this.article(data._id)}>
 

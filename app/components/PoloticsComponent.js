@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { ScrollView, View, Text, Image,Dimensions, StyleSheet, Tile, TouchableHighlight,TouchableOpacity} from 'react-native';
+import React, { Component,  } from 'react';
+import { ScrollView, View, Text, Image, StyleSheet,TouchableOpacity,ActivityIndicator} from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../src/actions';
 import HeaderComponent from './HeaderComponent';
+import { Thumbnail,Body, Content, CardItem}  from 'native-base'
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
 
 class Polotics extends Component {
@@ -33,7 +34,7 @@ class Polotics extends Component {
             {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
                         : articles.map((data, index) => {
 
-                        if(data.category.name == "politics"){
+                            if(data.Category.name == "Politics"){
                                 
                             return (
 

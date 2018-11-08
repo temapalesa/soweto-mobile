@@ -43,7 +43,7 @@ class Entertainment extends Component {
     {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
                         : articles.map((data, index) => {
 
-                        if(data.category.name == "Entertainment"){
+                       
                                 
                             return (
 
@@ -76,7 +76,7 @@ class Entertainment extends Component {
                             )
                             }
 
-                        })   
+                        )   
 
                         
                     }

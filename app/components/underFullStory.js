@@ -16,6 +16,7 @@ import * as actions from '../src/actions';
 import { CardItem, Card, Left, Body, Right, Thumbnail, Content, Container, } from 'native-base';
 import { StatusBar } from 'react-native';
 import HTML from 'react-native-render-html';
+import { Button } from 'react-native-elements';
 
 
 
@@ -59,7 +60,8 @@ class underFullStory extends Component {
                                                     </Body>
                                                     </Left>                                              
                                                 </CardItem>
-                                            
+                                                
+                                            <Button title="Back" />
                                         </View>
                                     </TouchableOpacity>
                                 </Content>

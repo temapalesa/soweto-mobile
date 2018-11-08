@@ -20,9 +20,11 @@ export const fetchArticle = (id) => async dispatch => {
 
 export const fetchVideo = () => async dispatch => {
 
-    const res = await fetch(baseURL + 'video')
+    const res = await fetch(baseURL + '/videos');
+    const data = await res.json();
+    dispatch({type:FETCH_VIDEO , payload : data})
 
-}
+};
 
 
 AppRegistry.registerComponent('Soweto-Mobile', () => HomeScreen);
