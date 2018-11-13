@@ -42,10 +42,7 @@ class Sports extends Component {
                                     />
 
                                 </CardItem>
-                                <CardItem>
-                                    
-                                    <HTML html={article.body} style={{ marginLeft: 'auto', marginRight: 'auto' }} />
-                                </CardItem>
+                                {/* <CardItem> */}
                                     <Text style={{ textAlign: 'center', color: 'black',marginTop:5, fontSize: 18 }}>{article.title}</Text>
                                  {/* </CardItem> */}
                                     <CardItem style={{}}>
