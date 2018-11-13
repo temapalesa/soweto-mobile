@@ -34,16 +34,16 @@ class Polotics extends Component {
             {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
                         : articles.map((data, index) => {
 
-                            if(data.Category.name == "Politics"){
+                            if(data.category.name == "Politics"){
                                 
                             return (
 
                                 <Content key={index} style={{ backgroundColor: '#fff' }}>
 
-                                    <View key={index} onPress={() => this.article(data._id)}>
+                                    <View key={index}>
 
 
-                                        <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }} onPress={() => this.article(data._id)}>
+                                        <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }}>
 
                                             <CardItem>
 

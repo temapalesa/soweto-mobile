@@ -16,10 +16,10 @@ import * as actions from '../src/actions';
 import { CardItem, Left, Body, Right, Thumbnail, Content, Icon, Button, Container } from 'native-base';
 import Header from '../components/HeaderComponent';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards';
-import Moment from  'moment';
 
 
-const Windowwidth = Dimensions.get('window');
+
+const  moment= require('moment');
 
 class Home extends Component {
     state = { animating: true };
@@ -59,19 +59,20 @@ class Home extends Component {
 
                                         <Card   style={styles.CardDirection}>
                                         
-
+    
                                                 <Image source={{ uri: data.picture }} style={styles.AvatarImage} />
-                                                <Divider style={styles.DividerLine}/>
+                                                
                                          
                                                 <Text style={styles.cardText} >{data.title} </Text>
+                                                <Text>{moment().startOf('day').fromNow()}</Text>
+                                                <CardItem>
+                                               
+                                                
+                                            </CardItem>
                                            
                                         </Card>
                                     
                                         <Divider style={color="#bc2b78"}/>
-                                       
-
-
-
                                     </View>
                                 </TouchableOpacity>
                             </Content>
