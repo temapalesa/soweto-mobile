@@ -17,7 +17,7 @@ import { CardItem, Left, Body, Right, Thumbnail, Content, Icon, Button, Containe
 import Header from '../components/HeaderComponent';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards';
 
-
+import Top from '../components/Topstories';
 
 const  moment= require('moment');
 
@@ -46,7 +46,9 @@ class Home extends Component {
         return (
             <View>
                 <Header {...this.props} />
-                <ScrollView >
+                <Top    {...this.props} />
+                <View style={{ margin:2,borderColor:'red', borderWidth:0.7 }}></View>
+                <ScrollView style={{ margin:5, }}  >
 
                     {!articles.length == 0 ? articles.map((data, index) => {
 
@@ -55,7 +57,7 @@ class Home extends Component {
 
 
                                 <TouchableOpacity key={index} onPress={() => this.article(data._id)}>
-                                    <View>
+                                    <View >
 
                                         <Card   style={styles.CardDirection}>
                                         

@@ -11,7 +11,8 @@ import SplashScreen  from '../Screens/SplashScreen';
 import PoloticsComp from '../components/PoloticsComponent';
 import LifestyleComponent from '../components/LifeStyle'
 import Entertainment from '../components/Entertainment';
-import Crime from '../components/Crime'
+import Crime from '../components/Crime';
+import Top from '../components/Topstories';
 
 
 import { Home,Trending,Sports,Videos, About,Politics,Lifestyle,Enter, Crim} from '../../screenNames';

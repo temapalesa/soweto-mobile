@@ -38,7 +38,7 @@ class Videos extends Component{
 
     render() {
       
-            const {videos} = this.props ;
+            const {video} = this.props ;
 
         return (
             <Container>
@@ -48,7 +48,7 @@ class Videos extends Component{
             
             <View style={{backgroundColor:'white'}}>
 
-                {!videos.length == 0 ? video.map((data , index) => {
+                {!video.length == 0 ? video.map((data , index) => {
                          console.log(video)
                         return(
                         
