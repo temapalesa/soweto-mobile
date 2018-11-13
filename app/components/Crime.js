@@ -9,7 +9,7 @@ import {
      Platform,
      ToolbarAndroid ,
      Dimensions,
-     TouchableHighlight, Divider 
+     TouchableOpacity, Divider 
     } from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../src/actions';
@@ -40,10 +40,10 @@ class Crime extends Component {
             <View>
             <Header />
     <ScrollView>
-    {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
+          {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
                         : articles.map((data, index) => {
 
-                        if(data.category.name == "Crime"){
+                        if(data.category.name = "Crime"){
                                 
                             return (
 
@@ -76,7 +76,7 @@ class Crime extends Component {
                             )
                             }
 
-                        })   
+                          }  )   
 
                         
                     }

@@ -10,6 +10,10 @@ import {
 import {WebView} from 'react-native';
 import { Container, Content, CardItem ,Card } from 'native-base';
 import HeaderComponent from '../components/HeaderComponent';
+import { connect } from 'react-redux';
+import * as actions from '../src/actions';
+
+
 
 
 const moment= require('moment');
@@ -26,69 +30,68 @@ class Videos extends Component{
                     />
                 )
             }
-            
-            reload = () => {
-                this.setState({
-                  viewState: WebViewState.LOADING
-                });
-                UIManager.dispatchViewManagerCommand(
-                  this.getWebViewHandle(),
-                  UIManager.RCTWebView.Commands.reload,
-                  renderLoading
-                 );
-               };
 
-            
+        componentDidMount(){
+            this.props.fetchVideo();
+       
+        }
+
     render() {
-        const dateToFormat = new Date('2018-04-19');
-        // console.log(currentDate);
+      
+            const {video} = this.props ;
+
         return (
             <Container>
-                  <View style={{backgroundColor:'white'}}>
-            <HeaderComponent {...this.props}/>
-            
-           <View >
-        
-        </View>
-        </View>
-        
-                <Content>
-                
-                    <Card      style = {{width : 400, height : 280}}>
-                            <WebView
-                            style = {{width : 400, height : 250}}
-                                source={{uri:'https://www.youtube.com/embed/XHV9V1LTnvM'}}
-                                domStorageEnabled={true}
-                               mediaPlaybackRequiresUserAction={true}
-                                scalesPageToFit={true}
-                               javaScriptEnabled={true}
-                                renderLoading={this.props.ActivityIndicatorLoadingView}
-                                startInLoadingState={true}
-                                ignoreSslError={true} 
-                            />
-                        <CardItem  style = {{width : 400}}>
-                            <Image
-                                 source={require('../Images/sowetoLogo.jpg')}
-                                style={{width:70 , height: 70 , borderRadius: 30}}
-                            />
-                            <View>
-                            <Text style={{fontWeight : 'bold'}}>Title</Text>
-                            
-                             <Text > Parts of the Bara taxi rank in Soweto have been closed for the time being.
-                                    This after a shoot out between two rival taxi associations...
-                                  Scores of commuters were left stranded as police fear a taxi war may be brewing.</Text>
-                                  </View>
-                            </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>{moment().startOf('day').fromNow()}</Text>
-                        </CardItem>
-                        </Card>
-                </Content>
-            </Container>
-         
+                 
+            <HeaderComponent />
 
+            
+            <View style={{backgroundColor:'white'}}>
+
+                {!video.length == 0 ? video.map((data , index) => {
+                         console.log(video)
+                        return(
+                        
+                                    <Content>
+                                    
+                                        <Card      style = {{width : 400, height : 280}}>
+                                                <WebView
+                                                   style = {{width : 400, height : 250}}
+                                                    //source={{uri: data.video}}
+                                                    domStorageEnabled={true}
+                                                   mediaPlaybackRequiresUserAction={true}
+                                                    scalesPageToFit={true}
+                                                   javaScriptEnabled={true}
+                                                    renderLoading={this.props.ActivityIndicatorLoadingView}
+                                                    startInLoadingState={true}
+                                                    ignoreSslError={true} 
+                                                />
+                                            <CardItem  style = {{width : 400}}>
+                                                <Image
+                                                     source={require('../Images/sowetoLogo.jpg')}
+                                                    style={{width:70 , height: 70 , borderRadius: 30}}
+                                                />
+                                                <Text>{data.title}</Text>
+                                                </CardItem>
+                                        </Card>
+                                        <Card>
+                                            <CardItem>
+                                                <Text>{moment().startOf('day').fromNow()}</Text>
+                                            </CardItem>
+                                            </Card>
+                                    
+                                    </Content>
+                            )
+                })
+                : <ActivityIndicator
+                size="large"
+                color="#bc2b78"
+                hidesWhenStopped={true}
+                style={{ paddingVertical: 50, paddingHorizontal: 180, alignSelf: 'stretch' }}
+            />
+        }
+        </View>
+        </Container>
         )
     }
 }
@@ -104,4 +107,11 @@ const styles = StyleSheet.create({
         }
 });
 
-export default Videos;
+function mapStateToProps({ video }) {
+    return {
+        video
+    }
+}
+
+
+export default connect(mapStateToProps,actions)(Videos);

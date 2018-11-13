@@ -1,4 +1,4 @@
-import {FETCH_ARTICLES, FETCH_ARTICLE} from './types';
+import {FETCH_ARTICLES, FETCH_ARTICLE , FETCH_VIDEO} from './types';
 import { AppRegistry } from 'react-native';
 
 
@@ -17,5 +17,14 @@ export const fetchArticle = (id) => async dispatch => {
     const data = await res.json();
     dispatch({type:FETCH_ARTICLE, payload: data});
 };
+
+export const fetchVideo = () => async dispatch => {
+
+    const res = await fetch(baseURL + '/videos');
+    const data = await res.json();
+    dispatch({type:FETCH_VIDEO , payload : data})
+
+};
+
 
 AppRegistry.registerComponent('Soweto-Mobile', () => HomeScreen);

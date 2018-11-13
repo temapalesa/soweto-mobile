@@ -34,7 +34,7 @@ import * as actions from '../src/actions';
              {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
                         : articles.map((data, index) => {
 
-                        if(data.category.name == "LifeStyle"){
+                        
                                 
                             return (
 
@@ -67,7 +67,7 @@ import * as actions from '../src/actions';
                             )
                             }
 
-                        })   
+                        )   
 
                         
                     }
