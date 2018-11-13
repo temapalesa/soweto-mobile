@@ -2,7 +2,7 @@ import {FETCH_ARTICLES, FETCH_ARTICLE , FETCH_VIDEO} from './types';
 import { AppRegistry } from 'react-native';
 
 
-const baseURL = "http://10.0.2.2:8080/api"
+const baseURL = "http://10.0.2.2:80/api"
 
 export const fetchArticles = () => async dispatch => {
     const res = await fetch(baseURL + '/articles');

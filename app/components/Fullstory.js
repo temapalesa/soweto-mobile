@@ -43,11 +43,6 @@ class Sports extends Component {
 
                                 </CardItem>
                                 <CardItem>
-<<<<<<< HEAD
-                                    
-                                    <HTML html={article.body} style={{ marginLeft: 'auto', marginRight: 'auto' }} />
-                                </CardItem>
-=======
                                     <Text style={{ textAlign: 'center', color: 'black',marginTop:5, fontSize: 18 }}>{article.title}</Text>
                                  </CardItem>
                                     <CardItem style={{}}>
@@ -55,7 +50,6 @@ class Sports extends Component {
                                     </CardItem>
                                    
                                 
->>>>>>> cbd4a19f30e8ad3812cd4dd16c66d86f87de78e9
                             </Card>
 
                             : <ActivityIndicator
