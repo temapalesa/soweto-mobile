@@ -21,9 +21,11 @@ import Header from '../components/HeaderComponent';
 class Sports extends Component {
     componentDidMount() {
         this.props.fetchArticles();
+        this.props.fetchArticle('');
     }
     viewArticle(id) {
         this.props.fetchArticle(id)
+        this.props.navigation.navigate('FullStory');
     }    
     render() {
 
@@ -46,10 +48,10 @@ class Sports extends Component {
 
                                 <Content key={index} style={{ backgroundColor: '#fff' }}>
 
-                                    <View key={index} onPress={() => this.article(data._id)}>
+                                    <View key={index} >
                                         
 
-                                        <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }} onPress={() => this.article(data._id)}>
+                                        <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }}>
 
                                             <CardItem>
 

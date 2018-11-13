@@ -7,9 +7,10 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../src/actions';
-import { Card, Container, CardItem } from 'native-base';
+import { Card, Container, CardItem, Body } from 'native-base';
 import HTML from 'react-native-render-html';
 import SubTitles from './underFullStory';
+import Button from 'react-native-button';
 
 
 
@@ -23,11 +24,12 @@ class Sports extends Component {
         const { article } = this.props;
         var pic = article.picture
         return (
+            <ScrollView>
             <View>
-                <ScrollView>
+              
                     <Container>
                         {article ?
-                            <Card style={{ marginTop: 10, }}>
+                            <Card style={{ marginTop: 10 }}>
                                 <CardItem>
                                     
                                     <Image
@@ -41,9 +43,19 @@ class Sports extends Component {
 
                                 </CardItem>
                                 <CardItem>
+<<<<<<< HEAD
                                     
                                     <HTML html={article.body} style={{ marginLeft: 'auto', marginRight: 'auto' }} />
                                 </CardItem>
+=======
+                                    <Text style={{ textAlign: 'center', color: 'black',marginTop:5, fontSize: 18 }}>{article.title}</Text>
+                                 </CardItem>
+                                    <CardItem style={{}}>
+                                    <HTML html={article.body}  />
+                                    </CardItem>
+                                   
+                                
+>>>>>>> cbd4a19f30e8ad3812cd4dd16c66d86f87de78e9
                             </Card>
 
                             : <ActivityIndicator
@@ -57,10 +69,10 @@ class Sports extends Component {
                     </Container>
                     <Text style={{ textAlign: 'center', marginTop: 15, color: 'black', fontSize: 18 }}>{article.title}</Text>
 
-                </ScrollView>
               
             </View>
 
+                </ScrollView>
         )
     }
 }

@@ -1,58 +1,57 @@
 import React, { Component } from 'react';
 import {
-     View,
-     StyleSheet,
-     Text,
-     ScrollView,
-     ActivityIndicator,
-     Image,
-     Platform,
-     ToolbarAndroid ,
-     Dimensions,
-     TouchableOpacity, Divider 
-    } from 'react-native';
-import {connect} from 'react-redux';
+    View,
+    Text,
+    ScrollView,
+    ActivityIndicator, Image,
+    Platform,
+    ToolbarAndroid,
+    TouchableOpacity,
+    FlatList,
+    StyleSheet
+} from 'react-native';
+import { connect } from 'react-redux';
 import * as actions from '../src/actions';
-import { CardItem,  Left, Body, Right, Thumbnail, Content, Container,  } from 'native-base';
+import { CardItem, Card, Left, Body, Right, Thumbnail, Content, DeckSwiper } from 'native-base';
 import { StatusBar } from 'react-native';
-import { ListItem, Tile,Card, Button, Icon} from 'react-native-elements';
 import Header from '../components/HeaderComponent';
 
 
 
 class Crime extends Component {
-    static navigationOptions = ({navigation}) => { 
-        let drawerLabel ='Crime' ;
-        
-        return { drawerLabel};   
-    }
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchArticles();
+        this.props.fetchArticle('');
     }
-    viewArticles(id){
-        this.props.fetchArticles(id)
-    }
+    viewArticle(id) {
+        this.props.fetchArticle(id)
+        this.props.navigation.navigate('FullStory');
+    }    
+    render() {
 
-    render(){
-        
         const { articles } = this.props;
-        return(
+
+        return (
             <View>
-            <Header />
-    <ScrollView>
-          {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
+
+                <Header />
+
+
+                <ScrollView >
+                   
+                    {!articles ? <ActivityIndicator size="large" color="#0097A7" hidesWhenStopped={true} />
                         : articles.map((data, index) => {
 
-                        if(data.category.name = "Crime"){
+                        if(data.category.name == "Crime"){
                                 
                             return (
 
                                 <Content key={index} style={{ backgroundColor: '#fff' }}>
 
-                                    <View key={index} onPress={() => this.article(data._id)}>
+                                    <View key={index} >
+                                        
 
-
-                                        <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }} onPress={() => this.article(data._id)}>
+                                        <Card style={{ height: 250, marginTop: 10, marginLeft: 5, marginRight: 5 }}>
 
                                             <CardItem>
 
@@ -76,22 +75,25 @@ class Crime extends Component {
                             )
                             }
 
-                          }  )   
-
-                        
+                        })
                     }
-       
 
-  </ScrollView>
+                </ScrollView>
 
-</View>
-              
-        )   
+            </View>
+
+        )
     }
 }
+
+
+
+
 function mapStateToProps({ articles }) {
     return {
         articles
     }
 }
-export default connect(mapStateToProps, actions) (Crime);
+
+export default connect(mapStateToProps, actions)(Crime);
+

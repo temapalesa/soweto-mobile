@@ -43,8 +43,9 @@ class underFullStory extends Component {
         const { articles } = this.props;
         // console.log(this.article);
         return (
+            <ScrollView >
             <View>
-                    <ScrollView >
+                   
                         {!articles.length == 0 ? articles.map((data, index) => {
 
                             return (
@@ -60,8 +61,7 @@ class underFullStory extends Component {
                                                     </Body>
                                                     </Left>                                              
                                                 </CardItem>
-                                                
-                                            <Button title="Back" />
+                    
                                         </View>
                                     </TouchableOpacity>
                                 </Content>
@@ -74,7 +74,7 @@ class underFullStory extends Component {
                                 style={{ paddingVertical: 50, paddingHorizontal: 180, alignSelf: 'stretch' }}
                             />
                         }
-                    </ScrollView>
+                  
 
 
 
@@ -82,7 +82,7 @@ class underFullStory extends Component {
             </View>
 
 
-
+  </ScrollView>
         )
     }
 }

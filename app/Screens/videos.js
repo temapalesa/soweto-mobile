@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
     View,
     Text ,
-    Dimensions,
     StyleSheet,
     Image ,
     ActivityIndicator 
@@ -12,6 +11,7 @@ import { Container, Content, CardItem ,Card } from 'native-base';
 import HeaderComponent from '../components/HeaderComponent';
 import { connect } from 'react-redux';
 import * as actions from '../src/actions';
+import Video from 'react-native-video';
 
 
 
@@ -38,7 +38,7 @@ class Videos extends Component{
 
     render() {
       
-            const {video} = this.props ;
+            const {videos} = this.props ;
 
         return (
             <Container>
@@ -48,23 +48,23 @@ class Videos extends Component{
             
             <View style={{backgroundColor:'white'}}>
 
-                {!video.length == 0 ? video.map((data , index) => {
+                {!videos.length == 0 ? video.map((data , index) => {
                          console.log(video)
                         return(
                         
                                     <Content>
                                     
                                         <Card      style = {{width : 400, height : 280}}>
-                                                <WebView
+                                                <Video
                                                    style = {{width : 400, height : 250}}
-                                                    //source={{uri: data.video}}
-                                                    domStorageEnabled={true}
-                                                   mediaPlaybackRequiresUserAction={true}
-                                                    scalesPageToFit={true}
+                                                    source={{uri: data.video}}
+                                                  /*  domStorageEnabled={true}
+                                                  // mediaPlaybackRequiresUserAction={true}
+                                                  //  scalesPageToFit={true}
                                                    javaScriptEnabled={true}
                                                     renderLoading={this.props.ActivityIndicatorLoadingView}
                                                     startInLoadingState={true}
-                                                    ignoreSslError={true} 
+                                                    ignoreSslError={true} */
                                                 />
                                             <CardItem  style = {{width : 400}}>
                                                 <Image
