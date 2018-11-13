@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import Button from 'react-native-button';
 import {View,Text,TouchableHighlight,Image} from 'react-native';
 
-
 export default class HeaderComponent extends Component{
     render() {
-        return(<View style={{
+        return(
+        <View style={{
             height: 80,
             flexDirection: 'row',
             justifyContent: 'flex-start',
@@ -23,10 +23,7 @@ export default class HeaderComponent extends Component{
         <Image 
         style={{width: 100,
         height: 100,
-        resizeMode:'contain',
-        
-      
-        
+        resizeMode:'contain',   
     }}
         source={require('../Images/sowetoLogo.jpg')}
         />
@@ -37,15 +34,12 @@ export default class HeaderComponent extends Component{
             const {navigate} = this.props.navigation;
             navigate('DrawerOpen');
         }}>
-       
         <Image
         style={{width: 32, height:32}}
-      //  source={require('../icons/menu.png')}
+       source={require('../icons/menu.png')}
         />
-        </TouchableHighlight>
-        
+        </TouchableHighlight>       
          </View>
-         
         </View>
         
         

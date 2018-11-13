@@ -108,9 +108,8 @@ let routeConfigs = {
     Crim:{
         path:'/',
         screen: Crime
-    }
+    },
    
-
 };
 let drawerNavigatorConfig ={
     initialRouteName : Home,

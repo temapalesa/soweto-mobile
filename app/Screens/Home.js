@@ -20,6 +20,7 @@ import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 
 
 const Windowwidth = Dimensions.get('window');
 
+
 class Home extends Component {
     state = { animating: true };
 
@@ -35,7 +36,7 @@ class Home extends Component {
         this.props.navigation.navigate('FullStory');
 
     }
-
+    
     render() {
         const animating = this.state.animating;
 
@@ -43,8 +44,7 @@ class Home extends Component {
 
         return (
             <View>
-
-                <Header />
+                <Header {...this.props} />
                 <ScrollView >
 
                     {!articles.length == 0 ? articles.map((data, index) => {
@@ -84,18 +84,11 @@ class Home extends Component {
                     }
                 </ScrollView>
 
-
             </View>
-
-
-
-
 
         )
     }
 }
-
-
 
 
 const styles = StyleSheet.create({

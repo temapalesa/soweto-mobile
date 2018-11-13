@@ -41,7 +41,7 @@ class Sports extends Component {
 
                                 </CardItem>
                                 <CardItem>
-                                    <Text style={{ textAlign: 'center', marginTop: 15, color: 'black', fontSize: 18 }}>{article.title}</Text>
+                                    
                                     <HTML html={article.body} style={{ marginLeft: 'auto', marginRight: 'auto' }} />
                                 </CardItem>
                             </Card>
@@ -55,6 +55,7 @@ class Sports extends Component {
                         }
 
                     </Container>
+                    <Text style={{ textAlign: 'center', marginTop: 15, color: 'black', fontSize: 18 }}>{article.title}</Text>
 
                 </ScrollView>
               
